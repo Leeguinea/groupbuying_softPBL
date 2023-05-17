@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         header {
+	background-color: #ffffff;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+/* 검색창 */
+.search {
+  position: absolute;
+  top: 200px;
+  left: 287px;
+  display: flex;
+  align-items: center;
+}
+
+/* 검색 입력창 */
+.search input[type="text"] {
+  width: 400px; /* 검색창의 너비를 조정 */
+  padding: 10px;
+  border: border box;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+/* 검색 버튼 */
+.search button[type="submit"] {
+  margin-left: 10px;
+  padding: 10px;
+  background-color: #f7c111;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.topnav-right {
+  position: absolute;
+  left: 654px;
+  top: 168px;
+}
+/* .buuu a {
+  display: inline-block; /* inline-block으로 설정하여 가로로 나열되게 함 */
+  /* background-color: #f7c111; 배경색을 노란색으로 설정 */
+  /* color: white; /* 글자색을 흰색으로 설정 */
+ /* padding: 10px 20px; /* 내부 여백을 추가하여 더욱 가시성을 높임 */
+  /*margin: 10px; /* 외부 여백을 추가하여 요소들 간의 간격을 둠 */
+  /*position: relative; /* 위치 속성을 설정 */
+  /*left: 320px; 
+  /*top: 250px; 
+  /*width: 150px; /* 너비를 더 크게 설정 */
+  /*height: 50px; /* 높이를 더 크게 설정 */
+ /* text-decoration: none; /* 밑줄을 없앰 */
+/*} */
+
+.buuu {
+    
+  text-align: center; /* 가운데 정렬 */
+}
+
+.buuu a {
+  display: inline-block;
+  background-color: #f7c111;
+  color: white;
+  padding: 20px;
+  margin: 30px;
+  position: relative;
+  
+  left: 230px;
+  top: 220px;
+  width: 170px;
+  height: 20px;
+  text-decoration: none;
+  border-radius: 10px; /* 박스의 모서리를 둥글게 만듬 */
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 100px; left: 320px; width: 367px; height: 63px;">
+        <div class="search">
+            <form method="get" th:action="@{/gesi}">
+          <input type="text" name="searchKey" placeholder="공동구매 검색어를 입력하세요">
+          <button type="submit">검색</button>
+            </form>
+        </div>
+        <div th:if="${session.loginId ==null}" class="topnav-right">
+            <a href="/GroupBuying/join">회원가입</a>
+            <a href="/GroupBuying/login">로그인</a>
+            </th:if>
+        </div>
+
+        <div th:if="${session.loginId != null}" class="topnav-right">
+            <a href="/GroupBuying/mypage">마이페이지</a>
+            <a href="/logout">로그아웃</a>
+            </th:if>
+        </div>
+
+
+
+        <div class="buuu">
+          <a href="#gori">카테고리 바로가기</a>
+          <a href="gesizak">게시글 작성하기</a>
+        </div>
+      </header>
+      
+
+</body>
+</html>
