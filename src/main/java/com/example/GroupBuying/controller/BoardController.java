@@ -21,7 +21,7 @@ public class BoardController {
     @GetMapping("/gesizak")
     public String writeForm(Model model, HttpSession session) {
         if(session.getAttribute("loginId")==null){
-            model.addAttribute("message", "로그인 후 사용이 가능합니다");
+            model.addAttribute("message", "로그인 후 사용이 가능합니다.");
             model.addAttribute("searchUrl", "/");
             return "message";
         }
