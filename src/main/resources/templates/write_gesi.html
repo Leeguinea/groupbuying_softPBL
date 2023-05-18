@@ -118,7 +118,7 @@
         border: 0;
       }
 
-      /*게시글 제목 하이퍼링크 색상*/
+    /*게시글 제목 하이퍼링크 색상*/
       .sub_news a {
         color: #383838;
         text-decoration: none;
@@ -132,7 +132,7 @@
         table-layout: fixed;
       }
 
-
+      
       .sub_news th {
         padding: 5px 0 6px;
         border-top: solid 1px #999;
@@ -166,7 +166,7 @@
         padding-left: 15px;
         font-size: 13px;
       }
-      /*여백설정*/
+/*여백설정*/
       .sub_news .title .pic,
       .sub_news .title .new {
         margin: 0 0 2px;
@@ -178,37 +178,33 @@
         position: relative;
         bottom:500px;
       }
-
-
+     
+   
     </style>
   </head>
   <body>
     <!--이미지 클릭시 메인 페이지 이동-->
-    <a href="home">
+    <a href="home.html">
       <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
     </a>
 
-    <form method="get" th:action="@{/gesi}">
     <div class="search">
-      <input type="text" placeholder="공동구매 할 검색어를 입력하세요." name="searchKey"/>
+      <input type="text" placeholder="공동구매 할 검색어를 입력하세요." />
     </div>
 
     <div>
       <input type="submit" class="btn1" value="검색" />
     </div>
-    </form>
+
     <div class="top">
-      <button class="btn10" onClick="location.href='gongi'">
+      <button class="btn10" onClick="location.href='notice.html'">
         공지사항
       </button>
-      <button class="btn11" onClick="location.href='jjim'">
-        내가 작성한 게시글
-      </button>
-      <button class="btn8" onClick="location.href='mypage'">
+      <button class="btn11" onClick="location.href='love.html'">찜</button>
+      <button class="btn8" onClick="location.href='mypage.html'">
         마이페이지
       </button>
-      <button class="btn9" onClick="location.href='logout'">
-        로그아웃</button>
+      <button class="btn9">로그아웃</button>
     </div>
 
     <h2>내가 작성한 게시글</h2>
@@ -237,19 +233,42 @@
         </tr>
       </thead>
       <tbody>
-
-        <div th:each="myboard: ${boardList}">
         <tr>
           <td class="title">
-            <a  scope="col" th:text="${myboard.title}"></a>
+            <a href="#">게시글 제목</a>
           </td>
-          <td class="name" th:text="${myboard.member.nickname}"></td>
-          <td class="date" th:text="${myboard.date}"></td>
-          <td class="hit"></td>
+          <td class="name">글쓴이이름</td>
+          <td class="date">2023/01/01</td>
+          <td class="hit">10</td>
         </tr>
-        </div>
+
+        <tr>
+          <td class="title">
+            <a href="#">게시글 제목 2</a>
+          </td>
+          <td class="name">글쓴이이름 2</td>
+          <td class="date">2023/01/02</td>
+          <td class="hit">15</td>
+        </tr>
+
+        <tr>
+          <td class="title">
+            <a href="#">게시글 제목 3</a>
+          </td>
+          <td class="name">글쓴이이름 3</td>
+          <td class="date">2023/01/03</td>
+          <td class="hit">20</td>
+        </tr>
+
+        <tr>
+          <td class="title">
+            <a href="#">게시글 제목 4</a>
+          </td>
+          <td class="name">글쓴이이름 4</td>
+          <td class="date">2023/01/04</td>
+          <td class="hit">5</td>
+        </tr>
       </tbody>
     </table>
   </body>
-  <a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
 </html>

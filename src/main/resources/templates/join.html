@@ -141,45 +141,41 @@
                 bottom:300px;
             }
 
+          
+
+            
 
     </style>
 
 
   </head>
   <body>
-<!-- 회원가입시 작성한 데이터는 controller 서버로 요청이 가야한다. 서비스 클래스로 정보가 넘어가야 한다.-->
-<!-- Post 방식으로 회원 컨트롤러 클래스로 데이터 전송 : 서버로 데이터를 전송하는 방식 -->
-<div>
-  <form action="/GroupBuying/join" method="post" onsubmit="return checkUserId();">
-
-
      <!--이미지 클릭시 메인 페이지 이동-->
-     <a href="home">
-       <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
-
-     </a>
+     <a href="home.html">
+    <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
+    </a>
 <form method="post">
     <div class="c1">
       <div class="id">
         <p>아이디</p>
         <input
-          type="text" name="id" class="id" stlye="width: 694px; height: 40px;">
+          type="text" class="id" stlye="width: 694px; height: 40px;">
 
       </div>
 
       <div class="nickname">
         <p>닉네임</p>
-        <input type="text" name="nickname" />
+        <input type="text" />
       </div>
 
       <div class="pwd">
         <p>비밀번호</p>
-        <input type="password" name="pwd"/>
+        <input type="password" />
       </div>
 
       <div class="name">
         <p>이름</p>
-        <input type="text" name="name"/>
+        <input type="text" />
       </div>
     </div>
 
@@ -191,13 +187,11 @@
         size="3"
         maxlength="3"
         oninput="changePhone1()"
-        placeholder="010"
-        name="phone1"
+        placeholder="010" 
       />
       -
       <input
         id="phone2"
-        name="phone2"
         type="number"
         size="3"
         maxlength="4"
@@ -206,7 +200,6 @@
       -
       <input
         id="phone3"
-        name="phone3"
         type="number"
         size="3"
         maxlength="4"
@@ -217,55 +210,33 @@
     <div class="c3">
       <p>생년월일</p>
       <div>
-        <input type="number" name="year" style="position: relative; right:35px;" placeholder="년(4자)" />
-        <select style="width:210px; height:45px; position:relative; bottom:33px; font-size:30pt" name="month">
+        <input type="number" style="position: relative; right:35px;" placeholder="년(4자)" />
+        <select style="width:210px; height:45px; position:relative; bottom:33px; font-size:30pt">
           <option value="">월</option>
-          <option value="1월">1월</option>
-          <option value="2월">2월</option>
-          <option value="3월">3월</option>
-          <option value="4월">4월</option>
-          <option value="5월">5월</option>
-          <option value="6월">6월</option>
-          <option value="7월">7월</option>
-          <option value="8월">8월</option>
-          <option value="9월">9월</option>
-          <option value="10월">10월</option>
-          <option value="11월">11월</option>
-          <option value="12월">12월</option>
+          <option value="">1월</option>
+          <option value="">2월</option>
+          <option value="">3월</option>
+          <option value="">4월</option>
+          <option value="">5월</option>
+          <option value="">6월</option>
+          <option value="">7월</option>
+          <option value="">8월</option>
+          <option value="">9월</option>
+          <option value="">10월</option>
+          <option value="">11월</option>
+          <option value="">12월</option>
         </select>
-        <input type="number" name="day" style="position: relative; left:35px;" placeholder="일" />
+        <input type="number" style="position: relative; left:35px;" placeholder="일" />
       </div>
     </div>
 
-      <div>
-        <input type="button" class="btn1" value="학교인증" ; />
-      </div>
+      
+    </div>
 
     <div>
       <input type="submit" class="btn2" value="가입하기";  onclick="alert('가입이 완료되었습니다.')"/>
     </div>
 
   </form>
-</div>
-<script>
-  function checkUserId() {
-    const id = document.getElementsByName("id");
-    const nickname = document.getElementsByName('nickname');
-    const pwd = document.getElementsByName('pwd');
-    const name = document.getElementsByName('name');
-    const phone1 = document.getElementsByName('phone1');
-    const phone2 = document.getElementsByName('phone2');
-    const phone3 = document.getElementsByName('phone3');
-    const year = document.getElementsByName('year');
-    const month = document.getElementsByName('month');
-    const day = document.getElementsByName('day');
-
-    if (!id) {
-      alert('모든 입력란을 채워주세요!');
-      return false;
-    }
-  }
-
-</script>
   </body>
 </html>

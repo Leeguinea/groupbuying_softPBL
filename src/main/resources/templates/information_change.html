@@ -4,51 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>공구칭구</title>
+<script>
 
+
+
+
+</script>
     <style>
-      img {
-        position: relative;
-        left: 0px;
-        bottom: 180px;
-      }
 
-      /*검색창*/
-      .search {
-        position: relative;
-        bottom: 460px;
-        left: 550px;
 
-        align-items: center;
-      }
-
-      /*검색창 사이즈*/
-      .search input[type="text"] {
-        width: 650px;
-        height: 50px;
-
-        padding: 10px;
-        border: 1px solid #6a6a6a;
-        border-radius: 5px;
-
-        font-size: 25px;
-      }
-
-      /* 검색 버튼 */
-      .btn1 {
-        background-color: #f7c111;
-        color: white;
-        border-radius: 5px;
-        border: none;
-
-        width: 100px;
-        height: 70px;
-        font-size: 23px;
+      
+        img {
+        margin: auto;
+        display: block;
+        width: 500px;
+        height: 500px;
 
         position: relative;
-        bottom: 530px;
-        left: 1250px;
+        bottom: 150px;
       }
+
 
       h2 {
         font-size: 45pt;
@@ -116,58 +93,43 @@ position: relative;
 right:90px;
 }
 
-      /*새로운 닉네임을 입력하세요*/
-      .p1 {
-        font-size: 30pt;
-
-        position: relative;
-        left: 200px;
-        bottom: 470px;
-      }
+    
 
       /* 새 닉네임창*/
       .new_nickname {
         position: relative;
-        left: 280px;
+       text-align: center;
         bottom: 470px;
-
-        font-size: 25pt;
+        font-size: 32pt;
       }
 
-      /*새 비밀번호를 입력해주세요.*/
-      .p2 {
-        font-size: 30pt;
-
-        position: relative;
-        left: 200px;
-        bottom: 390px;
-      }
+     
 
       /*현재 비밀번호창*/
       .p3 {
         position: relative;
-        left: 280px;
-        bottom: 380px;
+        text-align: center;
+        bottom: 460px;
 
-        font-size: 25pt;
+        font-size: 32pt;
       }
 
       /*새 비밀번호창*/
       .p4 {
         position: relative;
-        left: 280px;
-        bottom: 380px;
+        text-align: center;
+        bottom: 450px;
 
-        font-size: 25pt;
+        font-size: 32pt;
       }
 
       /*비밀번호 재확인창*/
       .p5 {
         position: relative;
-        left: 280px;
-        bottom: 380px;
+        text-align: center;
+        bottom: 420px;
 
-        font-size: 25pt;
+        font-size: 32pt;
       }
 
       /*취소버튼*/
@@ -175,7 +137,7 @@ right:90px;
         position: relative;
         bottom: 100px;
         background: #fdce50;
-
+        right:100px;
         width: 213px;
         height: 69px;
         font-size: 30px;
@@ -210,54 +172,55 @@ position: relative;
       }
 
 
+      /*전체적 위치수정*/
+      .c1{
+
+      position: relative;
+      top:180px;
+      }
+
+    
+
+
     </style>
   </head>
   <body>
 
     <!--이미지 클릭시 메인 페이지 이동-->
     <a href="home.html">
-    <img src="/Users/jeanmori/Desktop/3-1/soft/icon/logo.png" />
+    <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
     </a>
 
-    <div class="search">
-      <input type="text" placeholder="공동구매 할 검색어를 입력하세요." />
-    </div>
 
-    <div>
-      <input type="submit" class="btn1" value="검색" />
-    </div>
-
-    <div class="top">
-      <button class="btn11" onClick="location.href='love.html'">
-        찜
-      </button>
-      <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
-      <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
-      <button class="btn9">로그아웃</button>
-    </div>
-
-    <h2>개인정보 변경</h2>
+<div class="c1">
+   
 
     <form method="post">
       <!--닉네임 변경-->
       <div class="nickname">
-        <p class="p1">새로운 닉네임을 입력해주세요.</p>
+     
 
         <p class="new_nickname">
           새 닉네임
+          <br>
           <input
             type="text"
-            style="width: 694px; height: 40px; font-size: 20pt"
+            style="width: 694px; 
+            height: 40px; 
+            font-size: 20pt; 
+            text-align: center; 
+            "
           />
         </p>
       </div>
 
       <!--비밀번호 변경-->
       <div class="password">
-        <p class="p2">새로운 비밀번호를 입력해주세요.</p>
+       
 
         <p class="p3">
           현재 비밀번호
+          <br>
           <input
             type="password"
             style="width: 694px; height: 40px; font-size: 20pt"
@@ -266,6 +229,7 @@ position: relative;
 
         <p class="p4">
           새 비밀번호
+          <br>
           <input
             type="password"
             style="width: 694px; height: 40px; font-size: 20pt"
@@ -275,6 +239,7 @@ position: relative;
 
         <p class="p5">
           비밀번호 재확인
+          <br>
           <input
             type="password"
             style="width: 694px; height: 40px; font-size: 20pt"
@@ -293,7 +258,10 @@ position: relative;
       onclick="alert('변경이 완료되었습니다.')"
     />
 
+  </div>
+
 </div>
 </form>
+
   </body>
 </html>
