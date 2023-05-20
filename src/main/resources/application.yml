@@ -21,5 +21,3 @@ spring:
     hibernate:
       ddl-auto: update
 
-
-#test
