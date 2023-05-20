@@ -234,7 +234,7 @@ header {
           
           <div class="post-recruitment">
             <label for="recruitment">모집인원</label>
-            <input type="number" id="recruitment" name="recruitment" placeholder="숫자 입력해주세요.">
+            <input type="number" id="recruitment" name="recruitment" placeholder="숫자를 입력해주세요.">
             </div>
 
 			    <div class="post-content">
@@ -243,7 +243,7 @@ header {
 "거래시간:
 거래장소:
 결제방식:
-오픈채팅방 링크:
+
 
 품목에 대한 설명을 자유롭게 써주세요.
                 
@@ -295,6 +295,7 @@ header {
     // 유효성 검사 함수이다
     function validateForm() {
   var title = document.getElementById("title");
+  var link = document.getElementById("link");
   var category = document.getElementById("category").value;
   var item = document.getElementById("item").value;
   var recruitment = document.getElementById("recruitment").value;
@@ -305,6 +306,12 @@ header {
   if (title.value === "") {
     alert("제목을 입력해주세요.");
     title.focus();
+    return false;
+  }
+
+    if (link.value === "") {
+    alert("오픈채팅방 링크를 입력해주세요.");
+    link.focus();
     return false;
   }
 
