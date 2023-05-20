@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>공구칭구</title>
+    <script
+      src="https://kit.fontawesome.com/1035ee5251.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      img {
+        position: relative;
+        left: 0px;
+        bottom: 180px;
+      }
+
+      /*검색창*/
+      .search {
+        position: relative;
+        bottom: 460px;
+        left: 550px;
+
+        align-items: center;
+      }
+
+      /*검색창 사이즈*/
+      .search input[type="text"] {
+        width: 650px;
+        height: 50px;
+
+        padding: 10px;
+        border: 1px solid #6A6A6A;
+        border-radius: 5px;
+
+        
+        font-size: 25px;
+        
+
+
+      }
+
+      /* 검색 버튼 */
+      .btn1 {
+       
+        background-color: #f7c111;
+        color: white;
+        border-radius: 5px;
+        border: none;
+       
+        width:100px;
+        height: 70px;
+        font-size: 23px;
+
+        position: relative;
+        bottom: 530px;
+        left: 1250px;
+      }
+
+      h2 {
+        font-size: 45pt;
+
+        position: relative;
+        left: 150px;
+        bottom: 400px;
+      }
+
+      /*프로필 아이콘*/
+      i {
+        font-size: 8rem;
+
+        position: relative;
+        left: 180px;
+        bottom: 400px;
+      }
+
+      span {
+        position: relative;
+        left: 230px;
+        bottom: 455px;
+        font-size: 33pt;
+      }
+
+  
+  
+
+      /*개인정보 변경 버튼*/
+      .btn4 {
+        background-color: #f7c111;
+        color: white;
+        width: 347px;
+        height: 80px;
+        border: none;
+
+        font-size: 30pt;
+
+        position: relative;
+        left: 200px;
+        bottom: 300px;
+      }
+
+       /*회원탈퇴 버튼*/
+       .btn5 {
+        background-color: #f7c111;
+        color: white;
+        width: 347px;
+        height: 80px;
+        border: none;
+
+        font-size: 30pt;
+
+        position: relative;
+        left: 500px;
+        bottom: 300px;
+      }
+
+   
+
+
+      
+
+      .total{
+        position: relative;
+        bottom:110px;
+      }
+
+      /*상단 마이페이지 버튼*/
+      .btn8{
+        color: #878787;
+        background-color: white;
+        font-size: 22px;
+        border: none;
+
+        position: relative;
+        bottom:640px;
+        left:1125px;
+
+      }
+
+      /*상단 로그아웃 버튼*/
+      .btn9{
+        color: #878787;
+        background-color: white;
+        font-size: 22px;
+        border: none;
+
+        position: relative;
+        bottom:640px;
+        left:1140px;
+
+      }
+
+      /*상단 공지사항 버튼*/
+      .btn10{
+        color: #878787;
+        background-color: white;
+        font-size: 22px;
+        border: none;
+
+        position: relative;
+        bottom:640px;
+        left:1105px;
+
+      }
+
+      /*상단 찜버튼*/
+      .btn11 {
+        color: #878787;
+        background-color: white;
+        font-size: 22px;
+        border: none;
+
+        position: relative;
+        bottom: 640px;
+        left: 1120px;
+      }
+
+
+      /* 상단 4개버튼 위치이동*/
+      .top{
+
+        position: relative;
+        right:90px;
+      }
+
+
+      
+
+    </style>
+  </head>
+  <body>
+     <!--이미지 클릭시 메인 페이지 이동-->
+     <a href="home.html">
+    <img src="/Users/jeanmori/Desktop/3-1/soft/icon/logo.png" />
+    </a>
+
+    <div class="search">
+      <input type="text" placeholder="공동구매 할 검색어를 입력하세요." />
+    </div>
+
+    <div>
+      <input type="submit" class="btn1" value="검색">
+    </div>
+
+    <div class="top">
+      <button class="btn11" onClick="location.href='love.html'">찜</button>
+      <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
+      <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
+      <button class="btn9">로그아웃</button>
+    </div>
+
+    <div class="total">
+    <h2>마이페이지</h2>
+
+    <i class="fa-solid fa-circle-user"></i>
+
+    <span> <b>홍길동 </b></span>
+    <span>님</span>
+
+
+    <div>
+      <button class="btn4" onClick="location.href='information_change.html'">개인정보 변경</button>
+      <button class="btn5" onClick="location.href='withdrawal.html'">회원탈퇴 </button>
+    </div>
+
+    
+
+</div>
+  </body>
+</html>

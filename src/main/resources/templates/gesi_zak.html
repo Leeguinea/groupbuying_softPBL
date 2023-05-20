@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+  margin-top: 130px;
+	padding: 0;
+	font-family: Arial, sans-serif;
+  background-color: #ffffff;
+}
+
+
+header {
+	background-color: #ffffff;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+/* 검색창 */
+.search {
+  position: absolute;
+  top: 50px;
+  right: 100px;
+  display: flex;
+  align-items: center;
+}
+
+/* 검색 입력창 */
+.search input[type="text"] {
+  width: 400px; /* 검색창의 너비를 조정 */
+  padding: 10px;
+  border: border box;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+/* 검색 버튼 */
+.search button[type="submit"] {
+  margin-left: 10px;
+  padding: 10px;
+  background-color: #f7c111;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+
+.topnav-right {
+  position: absolute;
+  left: 730px;
+  top: 20px;
+}
+.post-gesi {
+  position: absolute;
+  left: 70px;
+  top: 100px;
+}
+.post-form {
+	margin: 20px auto;
+	max-width: 800px;
+	padding: 20px;
+	background-color: #ffffff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.post-form label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+
+.post-form input[type="text"], .post-form input[type="number"], .post-form select, .post-form textarea {
+	width: 100%;
+	padding: 
+}
+.post-category, .post-items {
+    display: inline-block;
+    width: 45%;
+}
+.post-items {
+    margin-left: 9.3%;
+}
+.post-recruitment {
+    width: 44.4%;
+}
+.post-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#cancel, #submit {
+  background-color: #f7c111;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+#cancel:hover, #submit:hover {
+  background-color: yellow;
+  color: white;
+  cursor: pointer;
+}
+#content {
+  font-family: "맑은 고딕", Arial, sans-serif;
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+<head>
+	<title>게시글 작성</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		
+         <div class="search">
+            <input type="text" placeholder="공동구매 검색어를 입력하세요">
+            <button type="submit">검색</button>
+        </div>
+
+		<div class="topnav-right"> 
+            <a href="#myPage">마이페이지</a>
+            <a href="#logout">로그아웃</a>
+        </div>
+
+	</header>
+	<main>
+    <div class="post-gesi">
+		<form action="/gesizak" method="post">
+        <h1 style="font-weight: bold; font-size: 30px;">게시글 작성</h1></div>
+		<div class="post-form">
+			<div class="post-title">
+				<label for="title">제목</label>
+				<input type="text" id="title" name="title">
+			</div>
+			<div class="post-category">
+				<label for="category">카테고리</label>
+				<select id="category" name="category">
+					<option value="option1">육류</option>
+					<option value="option2">과일</option>
+					<option value="option3">어류</option>
+				</select>
+			</div>
+			<div class="post-items">
+				<label for="item">품목</label>
+				<input type="text" id="item" name="item">
+			</div>
+			<div class="post-recruitment">
+				<label for="recruitment">모집인원</label>
+				<input type="number" id="recruitment" name="recruitment">
+			</div>
+			<div class="post-content">
+                <label for="content">내용</label>
+                <textarea rows="8" textarea id="content" name="content" placeholder=
+"거래시간:
+거래장소:
+결제방식:
+오픈채팅방 링크:
+
+품목에 대한 설명을 자유롭게 써주세요.
+                
+위 사항을 지키지 않아 발생하는 문제는 책임지지 않습니다."
+></textarea>
+                </div>
+
+
+
+                <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 33px; left: 0px; width: 367px; height: 63px;">
+               
+			<div class="post-image">
+				<label for="image">사진 첨부하기</label>
+				<input type="file" id="image" name="image">
+			</div>
+			<div class="post-buttons">
+				<button type="button" id="cancel">취소</button>
+				<input type="submit" value="등록">
+			</div>
+			</form>
+		</div>
+	</main>
+</body>
+</html>
+
+</body>
+</html>

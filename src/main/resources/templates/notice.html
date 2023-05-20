@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>공구칭구</title>
+
+    <style>
+      img {
+        position: relative;
+        left: 0px;
+        bottom: 180px;
+      }
+
+      /*검색창*/
+      .search {
+        position: relative;
+        bottom: 460px;
+        left: 550px;
+
+        align-items: center;
+      }
+
+      /*검색창 사이즈*/
+      .search input[type="text"] {
+        width: 650px;
+        height: 50px;
+
+        padding: 10px;
+        border: 1px solid #6a6a6a;
+        border-radius: 5px;
+
+        font-size: 25px;
+      }
+
+      /* 검색 버튼 */
+      .btn1 {
+        background-color: #f7c111;
+        color: white;
+        border-radius: 5px;
+        border: none;
+
+        width: 100px;
+        height: 70px;
+        font-size: 23px;
+
+        position: relative;
+        bottom: 530px;
+        left: 1250px;
+      }
+
+      /*상단 마이페이지 버튼*/
+      .btn8 {
+        color: #878787;
+        background-color: white;
+        font-size: 22px;
+        border: none;
+
+        position: relative;
+        bottom: 640px;
+        left: 1125px;
+      }
+
+      /*상단 로그아웃 버튼*/
+      .btn9 {
+        color: #878787;
+        background-color: white;
+        font-size: 22px;
+        border: none;
+
+        position: relative;
+        bottom: 640px;
+        left: 1140px;
+      }
+
+      /*상단 공지사항 버튼*/
+      .btn10 {
+        color: #878787;
+        background-color: white;
+        font-size: 22px;
+        border: none;
+
+        position: relative;
+        bottom: 640px;
+        left: 1105px;
+      }
+
+      /*상단 찜버튼*/
+      .btn11 {
+        color: #878787;
+        background-color: white;
+        font-size: 22px;
+        border: none;
+
+        position: relative;
+        bottom: 640px;
+        left: 1120px;
+      }
+
+      /* 상단 4개버튼 위치이동*/
+      .top {
+        position: relative;
+        right: 90px;
+      }
+
+
+      .title1{
+
+        font-size: 20pt;
+        position: relative;
+        left: 170px;
+        bottom: 480px;
+
+      }
+
+
+      .title2{
+
+font-size: 20pt;
+position: relative;
+left: 170px;
+bottom: 480px;
+
+}
+
+.title3{
+
+font-size: 20pt;
+position: relative;
+left: 170px;
+bottom: 480px;
+
+}
+
+.title4{
+
+font-size: 20pt;
+position: relative;
+left: 170px;
+bottom: 480px;
+
+}
+
+.title5{
+
+font-size: 20pt;
+position: relative;
+left: 170px;
+bottom: 480px;
+
+}
+
+      h2 {
+        font-size: 45pt;
+
+        position: relative;
+        left: 150px;
+        bottom: 510px;
+      }
+
+      ul {
+        font-size: 25pt;
+
+        position: relative;
+        left: 170px;
+        bottom: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--이미지 클릭시 메인 페이지 이동-->
+    <a href="home">
+      <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
+    </a>
+    <form method="get" th:action="@{/gesi}">
+    <div class="search">
+
+      <input type="text" placeholder="공동구매 할 검색어를 입력하세요." name="searchKey"/>
+
+    </div>
+
+    <div>
+      <input type="submit" class="btn1" value="검색" />
+
+    </div>
+    </form>
+    <div class="top">
+
+      <button class="btn10" onClick="location.href='gongi'">
+        공지사항
+      </button>
+      <button class="btn11" onClick="location.href='jjim'">
+        내가 작성한 게시글
+      </button>
+      <button class="btn8" onClick="location.href='mypage'">
+        마이페이지
+      </button>
+      <button class="btn9" onClick="location.href='logout'">
+        로그아웃</button>
+    </div>
+
+    <h2>공지사항</h2>
+
+    
+
+    <div class="title1">
+      <h3>공동구매 안전수칙</h3>
+    </div>
+
+    <ul>
+      <li>구매 시, 반드시 상품 정보 등을 자세히 확인하세요.</li>
+      <li>개인 정보 및 결제 정보는 절대 타인과 공유하지 마세요.</li>
+      <li>
+        만약 의심스러운 상품 또는 판매자를 발견할 경우, 관리자에게 즉시
+        신고해주세요.
+      </li>
+    </ul>
+
+    <div class="title2">
+      <h3>주문 및 결제</h3>
+    </div>
+
+    <ul>
+<li>결제 시에는 안전한 결제 수단을 사용해 주세요.</li>
+    </ul>
+
+    <div class="title3">
+      <h3>게시판 안내</h3>
+    </div>
+    <ul>
+      <li>작성자는 상품 정보를 정확하게 입력하고, 구매자와의 원활한 소통을 지향해야 합니다.</li>
+      <li>구매자는 신중한 구매 결정과 정확한 정보 입력을 통해 원활한 거래를 이뤄야 합니다.</li>
+    </ul>
+
+    <div class="title4">
+      <h3>작성자 의무</h3>
+    </div>
+    <ul>
+      <li>작성자는 정확하고 상세한 상품 정보를 제공해야 합니다.
+        <br> (제품 사양, 크기, 색상, 재료 등에 대한 정보는 신중히 입력되어야 합니다.)</li>
+      <li>상품의 가격은 명확히 표시되어야 합니다. 
+        <br> (추가 비용이 발생하는 경우, 구매자에게 사전에 알려야 합니다.)</li>
+      <li>구매자와의 원활한 의사소통은 매우 중요합니다. 
+        <br> (문의나 요청에 신속하고 정중하게 대응해야 합니다.)</li>
+<li>작성자는 공정한 거래를 지향해야 합니다. 
+  <br>(부당한 수수료나 가격 인위적 조작 등은 피해야 합니다.)</li>
+
+    </ul>
+    
+
+    <div class="title5">
+      <h3>구매자 의무</h3>
+    </div>
+
+    <ul>
+      <li>구매자는 상품을 구매하기 전에 신중하게 검토해야 합니다. 
+        <br>(상품 정보, 가격, 배송 조건 등을 면밀히 살펴보고 구매 결정을 내려야 합니다.)</li>
+        <li>구매자는 판매자와의 대화나 거래 과정에서 상호 존중과 예의를 지켜야 합니다. 
+          <br>(언어 폭력이나 모욕적인 행동은 자제해야 합니다.)
+        </li>
+    </ul>
+
+
+
+  </body>
+  <a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
+
+</html>
