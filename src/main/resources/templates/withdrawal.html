@@ -5,153 +5,201 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공구칭구</title>
+<script>
 
-    <style>
-          img {
-        margin: auto;
-        display: block;
-        width: 500px;
-        height: 500px;
-
-        position: relative;
-        bottom: 150px;
-      }
-
-      /*아이디 입력창*/
-      .c1 {
-        font-size: 45px;
-        text-align: center;
-
-        position: relative;
-        bottom: 300px;
-
-        margin: auto;
-        display: block;
-      }
-
-       /*비밀번호 입력창*/
-      .pwd{
-        position: relative;
-        bottom:40px;
-      }
+    //변수담기
+function check(){
+var id = document.getElementById("id");
+var nickname = document.getElementById("pwd");
+var eu = document.getElementById("eu");
 
 
-      /* 탈퇴사유 박스*/
-      .c2{
 
-font-size: 45px;
-text-align: center;
-
-position: relative;
-bottom:60px;
+//공백검사
+if(id.value==""){
+  alert("아이디를 입력하세요.");
+  id.focus(); //커서이동
+  return false;
 }
 
-      input[type="text"]{
-                width: 694px;
-                height: 40px;
+if(pwd.value==""){
+  alert("비밀번호를 입력하세요.");
+  pwd.focus(); //커서이동
+  return false;
+}
 
-                position: relative;
-                bottom:35px;
-          
-                font-size: 30pt;
-               
-            }
+/*
+if(eu.value == ""){g
+    alert("탈퇴사유를 선택해주세요.");
+  eu.focus(); //커서이동
+  return false;
 
-      input[type="password"]{
-                width: 694px;
-                height: 40px;
-
-                position: relative;
-                bottom:35px;
-
-                font-size: 30pt;
-            }
+}
+*/
 
 
-      /*취소버튼*/
-      .btn1 {
-        position: relative;
-        top: 100px;
-        background: #fdce50;
 
-        width: 213px;
-        height: 69px;
-        font-size: 30px;
-        color: white;
-        font-weight: bold;
 
-        border: none;
-      }
+else{
+  alert("탈퇴가 완료되었습니다.");
+}
 
-         /*탈퇴 버튼*/
-         .btn2 {
-        position: relative;
-        top: 100px;
-        background: #fdce50;
-
-        width: 213px;
-        height: 69px;
-        left:100px;
-        font-size: 30px;
-        color: white;
-        font-weight: bold;
-
-        border: none;
-      }
-
+//입력 값 전송(submit)
+document.join.submit();
+}
 
     
+
+
+
+</script>
+    <style>
+        img {
+            margin: auto;
+            display: block;
+            width: 500px;
+            height: 500px;
+
+            position: relative;
+            bottom: 150px;
+        }
+
+        /*아이디 입력창*/
+        .c1 {
+            font-size: 45px;
+            text-align: center;
+
+            position: relative;
+            bottom: 300px;
+
+            margin: auto;
+            display: block;
+        }
+
+        /*비밀번호 입력창*/
+        .pwd{
+            position: relative;
+            bottom:40px;
+        }
+
+
+        /* 탈퇴사유 박스*/
+        .c2{
+
+            font-size: 45px;
+            text-align: center;
+
+            position: relative;
+            bottom:60px;
+        }
+
+        input[type="text"]{
+            width: 694px;
+            height: 40px;
+
+            position: relative;
+            bottom:35px;
+
+            font-size: 30pt;
+
+        }
+
+        input[type="password"]{
+            width: 694px;
+            height: 40px;
+
+            position: relative;
+            bottom:35px;
+
+            font-size: 30pt;
+        }
+
+
+        /*취소버튼*/
+        .btn1 {
+            position: relative;
+            top: 100px;
+            background: #fdce50;
+
+            width: 213px;
+            height: 69px;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+
+            border: none;
+        }
+
+        /*탈퇴 버튼*/
+        .btn2 {
+            position: relative;
+            top: 100px;
+            background: #fdce50;
+
+            width: 213px;
+            height: 69px;
+            left:100px;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+
+            border: none;
+        }
+
+
+
 
 
     </style>
 </head>
 <body>
-      <!--이미지 클릭시 메인 페이지 이동-->
-      <a href="home.html">
-        <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
-        </a>
+<!--로고 클릭시 메인 페이지 이동-->
+<a href="home.html">
+    <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
+</a>
 
-        <form method="post">
-            <div class="c1">
-              <div class="id">
-                <p>아이디</p>
-                <input
-                  type="text" class="id" stlye="width: 694px; height: 40px;">
-                </div>
+<form method="post">
+    <div class="c1">
+        <div class="id" >
+            <p>아이디</p>
+            <input
+                    type="text" class="id" id="id" stlye="width: 694px; height: 40px;">
+        </div>
 
-                <div class="pwd">
-                    <p>비밀번호</p>
-                    <input type="password" />
-                  </div>
+        <div class="pwd" >
+            <p>비밀번호</p>
+            <input type="password" id="pwd" />
+        </div>
 
-                  <div class="c2">
-                    <p>탈퇴사유</p>
-                    <div>
-    
-                      <select style="width:694px; height:45px; position:relative; bottom:33px; font-size:30pt">
-                        <option value="">사유를 선택해주세요</option>
-                        <option value="">사이트가 불만족스러움</option>
-                        <option value="">잘 사용하지 않음</option>
-                        <option value="">재가입</option>
-                        <option value="">기타</option>
-                        
-                      </select>
-                     
-                    </div>
-                  </div>
+        <div class="c2">
+            <p>탈퇴사유</p>
+            <div>
 
-                  <div class="button">
-                    <input type="button" class="btn1" value="취소" onClick="location.href='mypage.html'"/>
-                    <input
-                      type="submit"
-                      class="btn2"
-                      value="탈퇴"
-                      ;
-                      onclick="alert('탈퇴가 완료되었습니다.')"
-                    />
+                <select id="eu" style="width:694px; height:45px; position:relative; bottom:33px; font-size:30pt" >
+                    <option value="">사유를 선택해주세요</option>
+                    <option value="">사이트가 불만족스러움</option>
+                    <option value="">잘 사용하지 않음</option>
+                    <option value="">재가입</option>
+                    <option value="">기타</option>
 
-                </form>
+                </select>
 
-    
+            </div>
+        </div>
+
+        <div class="button">
+            <input type="button" class="btn1" value="취소" onClick="location.href='mypage.html'"/>
+            <input
+                    type="button"
+                    class="btn2"
+                    value="탈퇴"
+                    onclick="check();">
+        
+            </div>
+        </div>
+
+</form>
+
+
 </body>
 </html>

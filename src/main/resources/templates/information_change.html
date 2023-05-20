@@ -4,19 +4,76 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
     <title>공구칭구</title>
-<script>
 
+    <script>
 
-
-
-</script>
-    <style>
-
-
+      //변수담기
+      function check(){
+      var nickname = document.getElementById("nickname");
+      var pwd1 = document.getElementById("pwd1");
+      var pwd2 = document.getElementById("pwd2");
+      var pwd3 = document.getElementById("pwd3");
       
-        img {
+      
+      //공백 검사
+      
+      if(nickname.value==""){
+        alert("새 닉네임을 입력하세요.");
+        nickname.focus(); //커서이동
+        return false;
+      }
+      
+      if(pwd1.value==""){
+        alert("현재 비밀번호를 입력하세요.");
+        pwd1.focus(); //커서이동
+        return false;
+      }
+      
+      if(pwd2.value==""){
+        alert("새 비밀번호를 입력하세요.");
+        pwd2.focus(); //커서이동
+        return false;
+      }
+      
+      //새 비밀번호 규정
+      var pwdCheck = /^[a-zA-z0-9]{8,16}$/;
+      if(!pwdCheck.test(pwd2.value)){
+        alert("비밀번호는 영문 대소문자와 숫자 8~16자 이내로 입력해야합니다.");
+        pwd2.focus();
+        return false;
+      }
+      
+      
+      
+      //비밀번호 재확인
+      if(pwd2.value!==pwd3.value){
+        alert("비밀번호가 일치하지 않습니다.");
+        pwd3.focus();
+        return false;
+      }
+      
+      if(pwd3.value==""){
+        alert("비밀번호 재확인을 입력하세요.");
+        pwd3.focus(); //커서이동
+        return false;
+      }
+      
+      
+      else{
+        alert("변경이 완료되었습니다.");
+      }
+      
+      //입력 값 전송(submit)
+      document.change.submit();
+      }
+      
+      
+      
+      </script>
+      
+    <style>
+      img {
         margin: auto;
         display: block;
         width: 500px;
@@ -26,6 +83,7 @@
         bottom: 150px;
       }
 
+    
 
       h2 {
         font-size: 45pt;
@@ -37,64 +95,6 @@
 
       
 
-      /*상단 마이페이지 버튼*/
-      .btn8 {
-        color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
-
-        position: relative;
-        bottom: 640px;
-        left: 1125px;
-      }
-
-      /*상단 로그아웃 버튼*/
-      .btn9 {
-        color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
-
-        position: relative;
-        bottom: 640px;
-        left: 1140px;
-      }
-
-        /*상단 공지사항 버튼*/
-        .btn10{
-        color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
-
-        position: relative;
-        bottom:640px;
-        left:1105px;
-
-      }
-
-        /*상단 찜 버튼*/
-        .btn11{
-          color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
-
-        position: relative;
-        bottom: 640px;
-        left: 1120px;
-      }
-
-       /* 상단 4개버튼 위치이동*/
-       .top{
-
-position: relative;
-right:90px;
-}
-
-    
-
       /* 새 닉네임창*/
       .new_nickname {
         position: relative;
@@ -103,7 +103,6 @@ right:90px;
         font-size: 32pt;
       }
 
-     
 
       /*현재 비밀번호창*/
       .p3 {
@@ -171,40 +170,37 @@ position: relative;
         text-align: center;
       }
 
+        /*전체적 위치수정*/
+        .c1{
 
-      /*전체적 위치수정*/
-      .c1{
-
-      position: relative;
-      top:180px;
-      }
-
-    
+position: relative;
+top:180px;
+}
 
 
     </style>
   </head>
   <body>
 
-    <!--이미지 클릭시 메인 페이지 이동-->
+    <!--로고 클릭시 메인 페이지 이동-->
     <a href="home.html">
     <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
     </a>
 
+    <div class="c1">
+    
 
-<div class="c1">
-   
-
-    <form method="post">
+    <form  name="change" method="post">
       <!--닉네임 변경-->
       <div class="nickname">
-     
+        
 
         <p class="new_nickname">
           새 닉네임
           <br>
           <input
-            type="text"
+            type="text"   
+            id="nickname"
             style="width: 694px; 
             height: 40px; 
             font-size: 20pt; 
@@ -216,13 +212,13 @@ position: relative;
 
       <!--비밀번호 변경-->
       <div class="password">
-       
-
+        
         <p class="p3">
           현재 비밀번호
           <br>
           <input
             type="password"
+            id="pwd1"
             style="width: 694px; height: 40px; font-size: 20pt"
           />
         </p>
@@ -232,8 +228,9 @@ position: relative;
           <br>
           <input
             type="password"
+            id="pwd2"
             style="width: 694px; height: 40px; font-size: 20pt"
-            placeholder="비밀번호는 8~16자이내만 가능합니다."
+            placeholder="비밀번호는 8~16자이내만 가능"
           />
         </p>
 
@@ -242,6 +239,7 @@ position: relative;
           <br>
           <input
             type="password"
+            id="pwd3"
             style="width: 694px; height: 40px; font-size: 20pt"
           />
         </p>
@@ -250,18 +248,18 @@ position: relative;
 
     <div class="button">
     <input type="button" class="btn2" value="취소" onClick="location.href='mypage.html'"/>
+       <!--sublmit이 아니라 button으로 처리-->
     <input
-      type="submit"
+      type="button"
       class="btn3"
       value="변경"
       ;
-      onclick="alert('변경이 완료되었습니다.')"
+      onclick="check();"
     />
 
-  </div>
-
+</div>
 </div>
 </form>
-
   </body>
 </html>
+

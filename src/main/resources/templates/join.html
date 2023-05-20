@@ -7,6 +7,110 @@
     <title>공구칭구</title>
 
     <script>
+//변수담기
+function check(){
+var id = document.getElementById("id");
+var nickname = document.getElementById("nickname");
+var pwd = document.getElementById("pwd");
+var name = document.getElementById("name");
+var phone1 = document.getElementById("phone1");
+var phone2 = document.getElementById("phone2");
+var phone3 = document.getElementById("phone3");
+var year = document.getElementById("year");
+var month = document.getElementById("month");
+var date = document.getElementById("date");
+
+
+//공백검사
+if(id.value==""){
+  alert("아이디를 입력하세요.");
+  id.focus(); //커서이동
+  return false;
+}
+
+if(nickname.value==""){
+  alert("닉네임을 입력하세요.");
+  nickname.focus(); //커서이동
+  return false;
+}
+
+if(pwd.value==""){
+  alert("비밀번호를 입력하세요.");
+  pwd.focus(); //커서이동
+  return false;
+}
+
+if(name.value==""){
+  alert("이름을 입력하세요.");
+  name.focus(); //커서이동
+  return false;
+}
+
+if(phone1.value==""){
+  alert("전화번호를 입력하세요.");
+  phone1.focus(); //커서이동
+  return false;
+}
+
+if(phone2.value==""){
+  alert("전화번호를 입력하세요.");
+  phone2.focus(); //커서이동
+  return false;
+}
+
+if(phone3.value==""){
+  alert("전화번호를 입력하세요.");
+  phone3.focus(); //커서이동
+  return false;
+}
+
+if(year.value==""){
+  alert("년도를 입력하세요.");
+  year.focus(); //커서이동
+  return false;
+}
+
+/*
+if(month.value==""){
+  alert("월을 선택하세요.");
+  month.focus(); //커서이동
+  return false;
+}
+  */
+
+
+if(date.value==""){
+  alert("일을 입력하세요.");
+  date.focus(); //커서이동
+  return false;
+}
+  
+
+//아이디 규정
+var idCheck = /^[a-zA-z0-9]{4,12}$/;
+if(!idCheck.test(id.value)){
+  alert("아이디는 영문 대소문자와 숫자 4~12자 이내로 입력해야합니다.");
+  id.focus();
+  return false;
+}
+
+//비밀번호 규정
+var pwdCheck = /^[a-zA-z0-9]{8,16}$/;
+if(!pwdCheck.test(pwd.value)){
+  alert("비밀번호는 영문 대소문자와 숫자 8~16자 이내로 입력해야합니다.");
+  pwd.focus();
+  return false;
+}
+
+else{
+  alert("가입이 완료되었습니다.");
+}
+
+//입력 값 전송(submit)
+document.join.submit();
+
+}
+
 
 
  
@@ -109,29 +213,21 @@
                
             }
 
-
-
-            .btn1{
-                width: 720px;
-                height: 55px;
-                margin: auto;
-                display: block;
-                font-size:25pt;
-
-                background-color: white;
-
-                position: relative;
-                bottom:450px;
-
-    
+                /*입력박스 안 안내문구*/
+                input::placeholder {
+              font-size: 23pt;
             }
 
+    
+            /*가입하기 버튼*/
+
             .btn2{
-                width: 720px;
+              width: 720px;
                 height: 80px;
                 margin: auto;
                 display: block;
 
+                border: none;
                 font-size:30pt;
                 color:white;
                 background-color:#FDCE50;
@@ -141,41 +237,46 @@
                 bottom:300px;
             }
 
-          
-
-            
 
     </style>
 
 
   </head>
   <body>
-     <!--이미지 클릭시 메인 페이지 이동-->
+<!-- 회원가입시 작성한 데이터는 controller 서버로 요청이 가야한다. 서비스 클래스로 정보가 넘어가야 한다.-->
+<!-- Post 방식으로 회원 컨트롤러 클래스로 데이터 전송 : 서버로 데이터를 전송하는 방식 -->
+<div>
+  <form name="join" action="/GroupBuying/join" method="post">
+
+
+     <!--로고 클릭시 메인 페이지 이동-->
      <a href="home.html">
-    <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
-    </a>
-<form method="post">
+       <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
+
+     </a>
+
     <div class="c1">
       <div class="id">
         <p>아이디</p>
         <input
-          type="text" class="id" stlye="width: 694px; height: 40px;">
+          type="text" name="id" class="id" id="id" stlye="width: 694px; height: 40px; font-size:20pt; "
+          placeholder="아이디는 영문 대소문자와 숫자 4~12자이내만 가능">
 
       </div>
 
       <div class="nickname">
         <p>닉네임</p>
-        <input type="text" />
+        <input type="text" name="nickname" id="nickname" />
       </div>
 
       <div class="pwd">
         <p>비밀번호</p>
-        <input type="password" />
+        <input type="password" name="pwd"  id="pwd" style=font-size:20pt; placeholder="비밀번호는 영문 대소문자와 숫자 8~16자이내만 가능" />
       </div>
 
       <div class="name">
         <p>이름</p>
-        <input type="text" />
+        <input type="text" name="name" id="name"/>
       </div>
     </div>
 
@@ -187,11 +288,12 @@
         size="3"
         maxlength="3"
         oninput="changePhone1()"
-        placeholder="010" 
+        name="phone1"
       />
       -
       <input
         id="phone2"
+        name="phone2"
         type="number"
         size="3"
         maxlength="4"
@@ -200,6 +302,7 @@
       -
       <input
         id="phone3"
+        name="phone3"
         type="number"
         size="3"
         maxlength="4"
@@ -210,33 +313,36 @@
     <div class="c3">
       <p>생년월일</p>
       <div>
-        <input type="number" style="position: relative; right:35px;" placeholder="년(4자)" />
-        <select style="width:210px; height:45px; position:relative; bottom:33px; font-size:30pt">
+        <input type="number" name="year" id="year" style="position: relative; right:35px;" placeholder="년(4자)" />
+        <select name="month" id="month" style="width:210px; height:45px; position:relative; bottom:33px; font-size:23pt">
           <option value="">월</option>
-          <option value="">1월</option>
-          <option value="">2월</option>
-          <option value="">3월</option>
-          <option value="">4월</option>
-          <option value="">5월</option>
-          <option value="">6월</option>
-          <option value="">7월</option>
-          <option value="">8월</option>
-          <option value="">9월</option>
-          <option value="">10월</option>
-          <option value="">11월</option>
-          <option value="">12월</option>
+          <option value="1월">1월</option>
+          <option value="2월">2월</option>
+          <option value="3월">3월</option>
+          <option value="4월">4월</option>
+          <option value="5월">5월</option>
+          <option value="6월">6월</option>
+          <option value="7월">7월</option>
+          <option value="8월">8월</option>
+          <option value="9월">9월</option>
+          <option value="10월">10월</option>
+          <option value="11월">11월</option>
+          <option value="12월">12월</option>
         </select>
-        <input type="number" style="position: relative; left:35px;" placeholder="일" />
+        <input type="number" name="day" style="position: relative; left:35px;" placeholder="일" />
       </div>
     </div>
 
-      
-    </div>
+  
 
     <div>
-      <input type="submit" class="btn2" value="가입하기";  onclick="alert('가입이 완료되었습니다.')"/>
+      <input type="button" class="btn2" value="가입하기";  onclick="check();"/>
     </div>
 
   </form>
+
+
+
+
   </body>
 </html>
