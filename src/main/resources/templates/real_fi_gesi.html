@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>공구칭구</title>
     <style>
         header {
 	background-color: #ffffff;
@@ -13,7 +13,7 @@
 	align-items: center;
 	justify-content: space-between;
 }
-/* 검색창 */
+
 .search {
   position: absolute;
   top: 50px;
@@ -45,10 +45,17 @@
 }
 
 
-.topnav-right {
+.topnav-right { 
   position: absolute;
-  left: 637px;
-  top: 20px;
+  top: 25px;
+  right: 100px;
+  /* display: flex; */
+  align-items: center;
+}
+
+.topnav-right a {
+  color: #000000;
+  text-decoration: none;
 }
         .post {
   margin: 10px;
@@ -135,8 +142,10 @@ function toggleFavorite() {
 </head>
 <body>
 	<header>
+    <a href="home.html">
 		<img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 33px; left: 0px; width: 367px; height: 63px;">
-		<div class="search">
+    </a>
+    <div class="search">
 			<input type="text" placeholder="공동구매 검색어를 입력하세요">
 			<button type="submit">검색</button>
 		</div>
@@ -154,7 +163,9 @@ function toggleFavorite() {
   <h2 class="title">제목1</h2>
   <p class="content">내용1</p>
   <div class="post-meta">
-    <button class="join-button">참여하기</button>
+    <a href="snagse_page.html">
+    <button class="join-button">상세보기</button>
+    </a>
     <p class="time">2023-04-14</p>
   </div>
 </div>
@@ -164,7 +175,9 @@ function toggleFavorite() {
   <h2 class="title">제목2</h2>
   <p class="content">내용2</p>
   <div class="post-meta">
-    <button class="join-button">참여하기</button>
+    <a href="snagse_page.html">
+    <button class="join-button">상세보기</button>
+    </a>
     <p class="time">2023-04-13</p>
   </div>
 </div>
@@ -179,7 +192,9 @@ function toggleFavorite() {
 		<h2 class="title">제목3</h2>
 		<p class="content">내용3</p>
 		<div class="post-meta">
-      <button class="join-button">참여하기</button>
+      <a href="snagse_page.html">
+      <button class="join-button">상세보기</button>
+      </a>
 			<p class="time">2023-04-12</p>
 
 		</div>
