@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <link rel="preload" href="image.jpg" as="image">
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>공구칭구</title>
+  <style>
+    header {
+      background-color: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* 검색창 */
+    .search {
+      position: absolute;
+      top: 50px;
+      right: 100px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* 검색 입력창 */
+    .search input[type="text"] {
+      width: 400px; /* 검색창의 너비를 조정 */
+      padding: 10px;
+      border: border box;
+      border-radius: 5px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    /* 검색 버튼 */
+    .search button[type="submit"] {
+      margin-left: 10px;
+      padding: 10px;
+      background-color: #f7c111;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+
+    .topnav-right {
+      position: absolute;
+      top: 25px;
+      right: 100px;
+      /* display: flex; */
+      align-items: center;
+    }
+
+    .topnav-right a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    header {
+      height: 100px; /* header 높이 고정 */
+      position: relative; /* header 자식 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
+    }
+    .content {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+    .content {
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #ccc;
+    }
+
+    .content p:nth-child(3) {
+      margin-bottom: 20px;
+    }
+
+    .content h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .content p {
+      margin-bottom: 10px;
+    }
+
+    .content a {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .content img {
+      display: block;
+      margin-bottom: 10px;
+      width: 300px;
+      height: 200px;
+    }
+
+    .content span {
+      font-weight: bold;
+    }
+    #user_id{
+      font-weight: normal;
+    }
+    #date {
+      float: right;
+      font-weight: normal;
+    }
+    .content p:nth-child(3) {
+      margin-bottom: 120px;
+    }
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="home">
+    <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 33px; left: 0px; width: 367px; height: 63px;">
+  </a>
+  <div class="search">
+    <input type="text" name="searchKey" placeholder="공동구매 검색어를 입력하세요">
+    <button type="submit">검색</button>
+  </div>
+  <div class="topnav-right">
+    <a href="notice">공지사항</a>
+    <a href="gesizak">글쓰기</a>
+    <a href="jjim">내가 작성한 글</a>
+    <a href="mypage">마이페이지</a>
+    <a href="logout">로그아웃</a>
+  </div>
+</header>
+<div th:each="board : ${board}">
+  <div class="content">
+    <p><span id="user_id" style="color: blue; font-size: 13px;" th:text="${board.member.nickname}"></span></p>
+    <h1 th:text="${board.title}"></h1>
+    <p><span id="date" style="float:right;" th:text="${board.date}"></span></p>
+
+
+    <a th:href="${board.link}"></a>
+    <img th:src="@{|${imageSrc}|}" style="width: 300px; height: 200px;">
+    <p>품목 <span id="item"></span></p>
+    <p th:text="${board.item}"></p>
+    <p>내용 <span id="content"></span></p>
+    <p th:text="${board.content}"></p>
+  </div>
+</div>
+
+</body>
+</html>
