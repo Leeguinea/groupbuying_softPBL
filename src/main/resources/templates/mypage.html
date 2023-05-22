@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -209,6 +209,7 @@
       <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
       <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
       <button class="btn9">로그아웃</button>
+      <p th:text="${session.loginId}"></p>
     </div>
 
     <div class="total">
@@ -221,7 +222,7 @@
 
 
     <div>
-      <button class="btn4" onClick="location.href='information_change.html'">개인정보 변경</button>
+      <button class="btn4" onClick="location.href='/mypage/information_change'">개인정보 변경</button>
       <button class="btn5" onClick="location.href='withdrawal.html'">회원탈퇴 </button>
     </div>
 

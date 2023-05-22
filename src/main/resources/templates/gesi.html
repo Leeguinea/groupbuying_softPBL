@@ -81,12 +81,12 @@
       height: 100px; /* header 높이 고정 */
       position: relative; /* header 자식 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
     }
-  
+
     .post {
       margin-top: 20px; /* header 높이 + margin 만큼 post 들을 아래로 밀어줌 */
       position: relative; /* post 내부 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
     }
-  
+
     .post-meta {
       position: absolute; /* post 내부 요소의 위치를 상대적으로 지정하기 위해 설정 */
       bottom: 0; /* post 내부 요소를 post의 하단에 위치시키기 위해 설정 */
@@ -94,7 +94,7 @@
       display: flex; /* post 내부 요소를 가로 방향으로 정렬하기 위해 설정 */
       flex-direction: row-reverse; /* post 내부 요소를 가로 방향으로 반전시켜서 오른쪽에 위치시키기 위해 설정 */
     }
-  
+
     .join-button {
   margin-left: 20px;
   padding: 10px;
@@ -111,9 +111,14 @@ span {
 }
 
   </style>
-  
+
 </head>
 <body>
+<script>
+    window.onload = function() {
+        alert("로그인이 완료되었습니다.");
+    };
+</script>
 	<header>
         <a href="home">
         <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 33px; left: 0px; width: 367px; height: 63px;">
@@ -128,9 +133,12 @@ span {
             <a href="/gongi">공지사항</a>
             <a href="/gesizak">글쓰기</a>
             <a href="/jjim">내가 작성한 글</a>
-			<a href="/myPage">마이페이지</a>
+			<a href="/GroupBuying/mypage">마이페이지</a>
 			<a href="/logout">로그아웃</a>
 		</div>
+        <div>
+        <p th:text="${session.loginId}"></p>
+        </div>
         <div class="topnav-right" th:if="${session.loginId == null}">
             <a href="/gongi">공지사항</a>
             <a href="GroupBuying/login">로그인</a>
