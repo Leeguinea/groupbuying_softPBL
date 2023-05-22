@@ -145,11 +145,15 @@
                 주제: <span th:text="${board.title}"></span>
             </a>
         </h2>
-        <p class="content" th:text="'내용:' +${board.content}"></p>
+        <p class="content" th:text="'내용:' + ${board.content}"></p>
         <div class="post-meta">
-            <button class="join-button">참여하기</button>
+            <a th:href="@{/view(id=${board.id})}">
+                <button class="join-button">상세보기</button>
+            </a>
             <p class="time" th:text="${board.date}"></p>
         </div>
+
+    </div>
     </div>
 </div>
 </body>

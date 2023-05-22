@@ -75,14 +75,17 @@ public class BoardController {
 
     @GetMapping("/view")
     public String detailForm(Model model, Long id) {
-
+        Board board = boardService.findById(id);
         BoardFile boardFile = boardFileRepository.findByBoard_id(id);
-        Board board =  boardService.findById(id);
-        String storedFileName = boardFile.getStoredFileName();
-        String imageSrc = "/upload/" + storedFileName;
+
         model.addAttribute("board", board);
-        model.addAttribute("imageSrc", imageSrc);
+
+        if (boardFile != null && !boardFile.getStoredFileName().isEmpty()) {
+            String storedFileName = boardFile.getStoredFileName();
+            String imageSrc = "/upload/" + storedFileName;
+            model.addAttribute("imageSrc", imageSrc);
+        }
+
         return "snagse_page";
     }
-
 }

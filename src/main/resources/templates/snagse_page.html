@@ -146,15 +146,24 @@
 </header>
 <div th:each="board : ${board}">
   <div class="content">
-    <p><span id="user_id" style="color: blue; font-size: 13px;" th:text="${board.member.nickname}"></span></p>
-    <h1 th:text="${board.title}"></h1>
     <p><span id="date" style="float:right;" th:text="${board.date}"></span></p>
 
+    <p><span id="user_id" style="color: blue; font-size: 13px;" th:text="${board.member.nickname}"></span></p>
+    <p>제목:  <span id="board.title"></span></p>
+    <h1 th:text="${board.title}"></h1>
 
-    <a th:href="${board.link}"></a>
-    <img th:src="@{|${imageSrc}|}" style="width: 300px; height: 200px;">
+    <p>오픈채팅방 링크: <a th:href="${board.link}" th:text="${board.link}"></a></p>
+
+    <p>카테고리: <span id="category"></span></p>
+    <p th:text="${board.category}"></p>
+
+    <div th:if="${imageSrc != null}">
+      <img th:src="@{|${imageSrc}|}" style="width: 300px; height: 200px;">
+    </div>
+
     <p>품목 <span id="item"></span></p>
     <p th:text="${board.item}"></p>
+
     <p>내용 <span id="content"></span></p>
     <p th:text="${board.content}"></p>
   </div>
