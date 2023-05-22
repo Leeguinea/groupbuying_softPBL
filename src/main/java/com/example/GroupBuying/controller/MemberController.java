@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -69,16 +70,30 @@ public class MemberController {
         return "redirect:/GroupBuying/login";
     }
 
+    @GetMapping("/GroupBuying/") //전체 회왼정보 조회 // DB에 저장된 회원데이터를 모두 가져온다.
+    public String findAll(Model model) { //model 이라는 스프링에서 제공해주는 객체를 이용.
+        List<MemberDTO> memberDTOList = memberService.findALL();
+        // 어떠한 HTML로 가져갈 데이터가 있다면, model을 사용.
+        model.addAttribute("memberList", memberDTOList);
+        return "list";
+    }
+
+    @GetMapping("/member/{id}")  //회원정보 상세조회
+    public String findById(@PathVariable String id, Model model) {
+        MemberDTO memberDTO = memberService.findById(id); //내가 조회하는 데이터가 1명일때는 DTO로 리턴 타입을 정한다.
+        model.addAttribute("member", memberDTO);
+        return "detail";
+    }
+
+    @GetMapping("/logout") //로그아웃
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "home";
+    }
 
     @GetMapping("/GroupBuying/mypage")
     public String mypage() {
         return "mypage";
-    }
-
-    @GetMapping("/logout")
-    public String logout(HttpSession session){
-        session.invalidate();
-        return "home";
     }
 
 
@@ -94,16 +109,10 @@ public class MemberController {
 
     public String update(@ModelAttribute MemberDTO memberDTO) {
         memberService.update(memberDTO); //서비스의 업데이트 메소드 호출
-        return "mypage";
+        return "redirect:/GroupBuying/" + memberDTO.getId();
     }
 
-    @GetMapping("/GroupBuying/") //DB에 저장된 회원데이터를 모두 가져온다.
-    public String findAll(Model model) { //model 이라는 스프링에서 제공해주는 객체를 이용.
-        List<MemberDTO> memberDTOList = memberService.findALL();
-        // 어떠한 HTML로 가져갈 데이터가 있다면, model을 사용.
-        model.addAttribute("memberList", memberDTOList);
-        return "list";
-    }
+
 
 
 
