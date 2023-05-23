@@ -16,25 +16,31 @@
 
 .search {
   position: absolute;
-  top: 50px;
-  right: 100px;
+  top: 35px;
+  right: 45px;
   display: flex;
   align-items: center;
 }
 
 /* 검색 입력창 */
 .search input[type="text"] {
-  width: 400px; /* 검색창의 너비를 조정 */
+  width: 450px; /* 검색창의 너비를 조정 */
   padding: 10px;
   border: border box;
+  height: 30px;
+
+  border: 1px solid #6A6A6A;
   border-radius: 5px;
+
   outline: none;
-  font-size: 16px;
+  font-size: 17.5px;
 }
 
 /* 검색 버튼 */
 .search button[type="submit"] {
-  margin-left: 10px;
+    width:70px;
+ height: 50px;
+  margin-left: 20px;
   padding: 10px;
   background-color: #f7c111;
   color: white;
@@ -44,17 +50,19 @@
   font-size: 16px;
 }
 
-
+/* 반응형 완성 */
 .topnav-right { 
   position: absolute;
-  top: 25px;
-  right: 100px;
+  top: 9.5px;
+  right: 42.3px;
   /* display: flex; */
   align-items: center;
 }
 
 .topnav-right a {
-  color: #000000;
+    margin: 4px;
+    font-size: 11.5pt;
+  color: #888787;
   text-decoration: none;
 }
         .post {
@@ -143,10 +151,10 @@ function toggleFavorite() {
 <body>
 	<header>
     <a href="home.html">
-		<img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 33px; left: 0px; width: 367px; height: 63px;">
+      <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
     </a>
     <div class="search">
-			<input type="text" placeholder="공동구매 검색어를 입력하세요">
+			<input type="text" placeholder="공동구매 검색어를 입력하세요.">
 			<button type="submit">검색</button>
 		</div>
 		<div class="topnav-right"> 
