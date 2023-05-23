@@ -5,12 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>공구칭구</title>
-    <script
-      src="https://kit.fontawesome.com/1035ee5251.js"
-      crossorigin="anonymous"
-    ></script>
+
 
     <style>
+
+/*전체적 비율수정*/
+body {
+    zoom: 70%;
+  }
+
       img {
         position: relative;
         left: 0px;
@@ -29,7 +32,7 @@
       /*검색창 사이즈*/
       .search input[type="text"] {
         width: 650px;
-        height: 50px;
+        height: 52px;
 
         padding: 10px;
         border: 1px solid #6A6A6A;
@@ -67,14 +70,25 @@
         bottom: 400px;
       }
 
-      /*프로필 아이콘*/
-      i {
-        font-size: 8rem;
+      /*마이페이지 글씨*/
+      h3{
+        font-size: 34pt;
+        
+position: relative;
+left: 88px;
+bottom: 450px;
 
-        position: relative;
-        left: 180px;
-        bottom: 400px;
+
       }
+      h4{
+        font-size: 25pt;
+
+position: relative;
+left: 200px;
+bottom: 450px;
+      }
+
+     
 
       span {
         position: relative;
@@ -83,37 +97,66 @@
         font-size: 33pt;
       }
 
-  
+
+     
+      table {
+       
+        margin: 0 auto;  /*표 가운데 정렬*/
+            border-collapse: collapse;
+            position: relative;
+            bottom:500px;
+            width: 1000px; 
+            height: 400px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #c6c6c6;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            width:50px;
+            
+            
+        }
+
+        td{
+          width:250px;
+
+        }
+
+       
+   
   
 
       /*개인정보 변경 버튼*/
       .btn4 {
-        background-color: #f7c111;
-        color: white;
-        width: 347px;
-        height: 80px;
-        border: none;
-
-        font-size: 30pt;
+        background-color: #f2f2f2;
+  color: black;
+  padding: 10px 20px;
+  border: 1px solid rgb(133, 133, 133);
+  border-radius: 3px;
 
         position: relative;
-        left: 200px;
-        bottom: 300px;
+        left: 920px;
+        bottom : 950px;
       }
 
        /*회원탈퇴 버튼*/
        .btn5 {
-        background-color: #f7c111;
-        color: white;
-        width: 347px;
-        height: 80px;
-        border: none;
+        background-color: #ececec;
+  color: #000000;
+  padding: 10px 20px;
+  border: 1px solid rgb(133, 133, 133);
+  border-radius: 3px;
+  left: 940px;
 
-        font-size: 30pt;
 
         position: relative;
-        left: 500px;
-        bottom: 300px;
+     
+        bottom: 950px;
       }
 
    
@@ -126,8 +169,8 @@
         bottom:110px;
       }
 
-      /*상단 마이페이지 버튼*/
-      .btn8{
+       /*상단 마이페이지 버튼*/
+       .btn8{
         color: #878787;
         background-color: white;
         font-size: 22px;
@@ -135,7 +178,7 @@
 
         position: relative;
         bottom:640px;
-        left:1125px;
+        
 
       }
 
@@ -148,7 +191,7 @@
 
         position: relative;
         bottom:640px;
-        left:1140px;
+        
 
       }
 
@@ -161,11 +204,11 @@
 
         position: relative;
         bottom:640px;
-        left:1105px;
+       
 
       }
 
-      /*상단 찜버튼*/
+      /*상단 내가 작성한 글 버튼*/
       .btn11 {
         color: #878787;
         background-color: white;
@@ -174,30 +217,42 @@
 
         position: relative;
         bottom: 640px;
-        left: 1120px;
+        
+      }
+
+         /*상단 글쓰기 버튼*/
+         .btn12 {
+        color: #878787;
+        background-color: white;
+        font-size: 22px;
+        border: none;
+
+        position: relative;
+        bottom: 640px;
+    
       }
 
 
-      /* 상단 4개버튼 위치이동*/
+
+
+      /* 상단버튼 위치이동*/
       .top{
 
         position: relative;
         right:90px;
+        left:778px;
       }
-
-
-      
 
     </style>
   </head>
   <body>
-     <!--이미지 클릭시 메인 페이지 이동-->
+     <!--로고 클릭시 메인 페이지 이동-->
      <a href="home.html">
     <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
     </a>
 
     <div class="search">
-      <input type="text" placeholder="공동구매 할 검색어를 입력하세요." />
+      <input type="text" placeholder="공동구매 검색어를 입력하세요." />
     </div>
 
     <div>
@@ -205,24 +260,64 @@
     </div>
 
     <div class="top">
-      <button class="btn11" onClick="location.href='love.html'">찜</button>
+     
       <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
+      <button class="btn12" onClick="location.href='gesi_zak.html'">글쓰기</button>
+      <button class="btn11" onClick="location.href='write_gesi.html'">내가 작성한 글</button>
       <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
       <button class="btn9">로그아웃</button>
+     
     </div>
 
     <div class="total">
-    <h2>마이페이지</h2>
+    <h3>마이페이지</h3>
 
-    <i class="fa-solid fa-circle-user"></i>
 
-    <span> <b>홍길동 </b></span>
-    <span>님</span>
+    <h4>나의 정보</h4>
+
+   
+
+    <!--정보-->
+
+    <table>
+      <thead>
+      
+        <!--표 윗줄에 선 추가-->
+          <tr colspan="2" style="border-bottom: 2px solid black; ">&nbsp;</tr>
+       
+      </thead>
+      <tbody>
+      
+    
+              <th>아이디</th>
+              <td class="id">gildong</td>
+          </tr>
+          <tr>
+              <th>닉네임</th>
+              <td class="nickname">길동2</td>
+          </tr>
+          <tr>
+              <th>이름</th>
+              <td class="name">홍길동</td>
+          </tr>
+          <tr>
+              <th>전화번호</th>
+              <td class="number">010-0000-0000</td>
+          </tr>
+          <tr>
+              <th>생년월일</th>
+              <td class="birth">0000-00-00</td>
+          </tr>
+      </tbody>
+  </table>
+
+    
 
 
     <div>
       <button class="btn4" onClick="location.href='information_change.html'">개인정보 변경</button>
       <button class="btn5" onClick="location.href='withdrawal.html'">회원탈퇴 </button>
+
     </div>
 
     
