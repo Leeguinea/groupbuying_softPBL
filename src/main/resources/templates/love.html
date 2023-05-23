@@ -49,46 +49,43 @@
         left: 1250px;
       }
 
-        /*상단 마이페이지 버튼*/
-        .btn8{
+      /*상단 마이페이지 버튼*/
+      .btn8 {
         color: #878787;
         background-color: white;
         font-size: 22px;
         border: none;
 
         position: relative;
-        bottom:640px;
-        
-
+        bottom: 640px;
+        left: 1125px;
       }
 
       /*상단 로그아웃 버튼*/
-      .btn9{
+      .btn9 {
         color: #878787;
         background-color: white;
         font-size: 22px;
         border: none;
 
         position: relative;
-        bottom:640px;
-        
-
+        bottom: 640px;
+        left: 1140px;
       }
 
       /*상단 공지사항 버튼*/
-      .btn10{
+      .btn10 {
         color: #878787;
         background-color: white;
         font-size: 22px;
         border: none;
 
         position: relative;
-        bottom:640px;
-       
-
+        bottom: 640px;
+        left: 1105px;
       }
 
-      /*상단 내가 작성한 글 버튼*/
+      /*상단 찜버튼*/
       .btn11 {
         color: #878787;
         background-color: white;
@@ -97,37 +94,20 @@
 
         position: relative;
         bottom: 640px;
-        
+        left: 1120px;
       }
 
-         /*상단 글쓰기 버튼*/
-         .btn12 {
-        color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
-
+      /* 상단 4개버튼 위치이동*/
+      .top {
         position: relative;
-        bottom: 640px;
-    
-      }
-
-
-
-
-      /* 상단버튼 위치이동*/
-      .top{
-
-        position: relative;
-        right:90px;
-        left:840px;
+        right: 90px;
       }
 
       h2 {
         font-size: 45pt;
 
         position: relative;
-        right: 700px;
+        left: 150px;
         bottom: 510px;
       }
 
@@ -138,7 +118,7 @@
         border: 0;
       }
 
-    /*게시글 제목 하이퍼링크 색상*/
+      /*게시글 제목 하이퍼링크 색상*/
       .sub_news a {
         color: #383838;
         text-decoration: none;
@@ -152,7 +132,7 @@
         table-layout: fixed;
       }
 
-      
+
       .sub_news th {
         padding: 5px 0 6px;
         border-top: solid 1px #999;
@@ -186,7 +166,7 @@
         padding-left: 15px;
         font-size: 13px;
       }
-/*여백설정*/
+      /*여백설정*/
       .sub_news .title .pic,
       .sub_news .title .new {
         margin: 0 0 2px;
@@ -197,34 +177,39 @@
 
         position: relative;
         bottom:500px;
-        right: 700px;
-        
       }
-     
-   
+
+
     </style>
   </head>
   <body>
     <!--이미지 클릭시 메인 페이지 이동-->
-    <a href="home.html">
+    <a href="home">
       <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
     </a>
 
+    <form method="get" th:action="@{/gesi}">
     <div class="search">
-      <input type="text" placeholder="공동구매 할 검색어를 입력하세요." />
+      <input type="text" placeholder="공동구매 할 검색어를 입력하세요." name="searchKey"/>
     </div>
 
     <div>
       <input type="submit" class="btn1" value="검색" />
     </div>
-
+    </form>
     <div class="top">
-      <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
-      <button class="btn12" onClick="location.href='gesi_zak.html'">글쓰기</button>
-      <button class="btn11" onClick="location.href='write_gesi.html'">내가 작성한 글</button>
-      <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
-      <button class="btn9">로그아웃</button>
-
+      <button class="btn10" onClick="location.href='gongi'">
+        공지사항
+      </button>
+      <button class="btn11" onClick="location.href='jjim'">
+        내가 작성한 게시글
+      </button>
+      <button class="btn8" onClick="location.href='mypage'">
+        마이페이지
+      </button>
+      <button class="btn9" onClick="location.href='logout'">
+        로그아웃</button>
+    </div>
 
     <h2>내가 작성한 게시글</h2>
 
@@ -252,42 +237,19 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td class="title">
-            <a href="#">게시글 제목</a>
-          </td>
-          <td class="name">글쓴이이름</td>
-          <td class="date">2023/01/01</td>
-          <td class="hit">10</td>
-        </tr>
 
+        <div th:each="myboard: ${boardList}">
         <tr>
           <td class="title">
-            <a href="#">게시글 제목 2</a>
+            <a  scope="col" th:text="${myboard.title}"></a>
           </td>
-          <td class="name">글쓴이이름 2</td>
-          <td class="date">2023/01/02</td>
-          <td class="hit">15</td>
+          <td class="name" th:text="${myboard.member.nickname}"></td>
+          <td class="date" th:text="${myboard.date}"></td>
+          <td class="hit"></td>
         </tr>
-
-        <tr>
-          <td class="title">
-            <a href="#">게시글 제목 3</a>
-          </td>
-          <td class="name">글쓴이이름 3</td>
-          <td class="date">2023/01/03</td>
-          <td class="hit">20</td>
-        </tr>
-
-        <tr>
-          <td class="title">
-            <a href="#">게시글 제목 4</a>
-          </td>
-          <td class="name">글쓴이이름 4</td>
-          <td class="date">2023/01/04</td>
-          <td class="hit">5</td>
-        </tr>
+        </div>
       </tbody>
     </table>
   </body>
+  <a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
 </html>
