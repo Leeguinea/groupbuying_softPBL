@@ -16,4 +16,7 @@ public class BoardDTO {
     private String item;
     private String content;
     private String category;
+    private String link;
+    private int fileAttached;
+    private BoardFileDTO boardFileDTO;
 }
