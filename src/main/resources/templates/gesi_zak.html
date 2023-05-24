@@ -308,7 +308,7 @@ header {
   var item = document.getElementById("item").value;
   var recruitment = document.getElementById("recruitment").value;
   var content = document.getElementById("content").value;
-  var image = document.getElementById("image").value;
+
 
 
   if (title.value === "") {
@@ -347,11 +347,7 @@ header {
     return false;
   }
 
-  if (image === "") {
-    alert("사진을 첨부해주세요.");
-    document.getElementById("image").focus();  
-    return false;
-  }
+  
 
   // 유효성 검사 통과이다
   return true;
