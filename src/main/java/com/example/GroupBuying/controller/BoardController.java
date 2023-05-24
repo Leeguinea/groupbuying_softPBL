@@ -1,7 +1,10 @@
 package com.example.GroupBuying.controller;
 
 import com.example.GroupBuying.dto.BoardDTO;
+import com.example.GroupBuying.dto.BoardFileDTO;
 import com.example.GroupBuying.entity.Board;
+import com.example.GroupBuying.entity.BoardFile;
+import com.example.GroupBuying.repository.BoardFileRepository;
 import com.example.GroupBuying.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -17,6 +21,12 @@ import java.util.List;
 public class BoardController {
 
     private final BoardService boardService;
+    private final BoardFileRepository boardFileRepository;
+
+    @GetMapping("/home")
+    public String homeForm(){
+        return "home";
+    }
 
     @GetMapping("/gesizak")
     public String writeForm(Model model, HttpSession session) {
@@ -28,19 +38,11 @@ public class BoardController {
         return "gesi_zak";
     }
 
-    @PostMapping("/gesizak")
-    public String write(BoardDTO boardDTO, Model model) {
-        boardService.write(boardDTO);
-        List<Board> boardList =boardService.findAll();
-        model.addAttribute("boardList", boardList);
-        return "gesi";
-    }
-
     @GetMapping("/gesi")
     public String postForm(Model model, String searchKey){
         List<Board> boardList = null;
         if(searchKey==null) {
-            boardList = boardService.findAll();
+            boardList = boardService.findAllByOrderByidDesc();
         } else {
             boardList = boardService.searchKeyList(searchKey);
         }
@@ -63,4 +65,27 @@ public class BoardController {
         return "love";
     }
 
+    @PostMapping("/gesizak")
+    public String write(BoardDTO boardDTO, BoardFileDTO boardFileDTO, Model model) throws IOException {
+        boardService.write(boardDTO, boardFileDTO);
+        List<Board> boardList =boardService.findAllByOrderByidDesc();
+        model.addAttribute("boardList", boardList);
+        return "gesi";
+    }
+
+    @GetMapping("/view")
+    public String detailForm(Model model, Long id) {
+        Board board = boardService.findById(id);
+        BoardFile boardFile = boardFileRepository.findByBoard_id(id);
+
+        model.addAttribute("board", board);
+
+        if (boardFile != null && !boardFile.getStoredFileName().isEmpty()) {
+            String storedFileName = boardFile.getStoredFileName();
+            String imageSrc = "/upload/" + storedFileName;
+            model.addAttribute("imageSrc", imageSrc);
+        }
+
+        return "snagse_page";
+    }
 }
