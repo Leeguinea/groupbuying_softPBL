@@ -5,9 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>공구칭구</title>
+ <!--탭 로고-->
+    <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
+
 
     <style>
-      img {
+
+       /*모바일 반응형*/
+@media screen and (max-width:767px){
+        
+        body{
+          zoom:50%;
+        }
+
+    
+        }
+
+    /*모든요소 중앙배열*/
+    .all{
+            width:1400px;
+            margin: 0 auto;
+
+        }
+
+    .imgclass{
+        width:1400px;
+        margin: 0 auto;
+    }
+
+
+    /*오른쪽 불필요한 여백제거*/
+    body {
+    padding-right: 0;
+    overflow-x: hidden;
+  }
+   
+
+    img {
         position: relative;
         left: 0px;
         bottom: 180px;
@@ -25,23 +60,28 @@
       /*검색창 사이즈*/
       .search input[type="text"] {
         width: 650px;
-        height: 50px;
+        height: 52px;
 
         padding: 10px;
-        border: 1px solid #6a6a6a;
+        border: 1px solid #6A6A6A;
         border-radius: 5px;
 
+        
         font-size: 25px;
+        
+
+
       }
 
       /* 검색 버튼 */
       .btn1 {
+       
         background-color: #f7c111;
         color: white;
         border-radius: 5px;
         border: none;
-
-        width: 100px;
+       
+        width:100px;
         height: 70px;
         font-size: 23px;
 
@@ -49,9 +89,8 @@
         bottom: 530px;
         left: 1250px;
       }
-
-       /*상단 마이페이지 버튼*/
-       .btn8{
+     /*상단 마이페이지 버튼*/
+     .btn8{
         color: #878787;
         background-color: white;
         font-size: 22px;
@@ -89,17 +128,7 @@
 
       }
 
-      /*상단 내가 작성한 글 버튼*/
-      .btn11 {
-        color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
-
-        position: relative;
-        bottom: 640px;
-        
-      }
+ 
 
          /*상단 글쓰기 버튼*/
          .btn12 {
@@ -120,27 +149,25 @@
       .top{
 
         position: relative;
-        right:90px;
-        left:840px;
+        left:938px;
       }
 
 
-  
       .title1{
 
         font-size: 20pt;
         position: relative;
-        left: 170px; 
+        left: 170px;
         bottom: 480px;
 
       }
 
-       
+
       .title2{
 
 font-size: 20pt;
 position: relative;
-left: 170px; 
+left: 170px;
 bottom: 480px;
 
 }
@@ -149,7 +176,7 @@ bottom: 480px;
 
 font-size: 20pt;
 position: relative;
-left: 170px; 
+left: 170px;
 bottom: 480px;
 
 }
@@ -158,7 +185,7 @@ bottom: 480px;
 
 font-size: 20pt;
 position: relative;
-left: 170px; 
+left: 170px;
 bottom: 480px;
 
 }
@@ -167,17 +194,17 @@ bottom: 480px;
 
 font-size: 20pt;
 position: relative;
-left: 170px; 
+left: 170px;
 bottom: 480px;
 
 }
 
-      h2 {
-        font-size: 45pt;
+h2 {
+        font-size: 35pt;
 
         position: relative;
-        left: 150px;
-        bottom: 510px;
+        left: 90px;
+        bottom: 550px;
       }
 
       ul {
@@ -187,36 +214,54 @@ bottom: 480px;
         left: 170px;
         bottom: 500px;
       }
+
+      .content{
+
+        position: relative;
+        bottom:50px;
+      }
     </style>
   </head>
   <body>
     <!--이미지 클릭시 메인 페이지 이동-->
     <a href="home.html">
+      <div class=imgclass>
       <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
+      </div>
     </a>
 
+    <div class="all">
+    <form method="get" th:action="@{/gesi}">
     <div class="search">
-      <input type="text" placeholder="공동구매 할 검색어를 입력하세요." />
+
+      <input type="text" placeholder="공동구매 검색어를 입력하세요." name="searchKey"/>
+
     </div>
 
     <div>
       <input type="submit" class="btn1" value="검색" />
-    </div>
 
+    </div>
+    </form>
     <div class="top">
 
-      <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
-      <button class="btn12" onClick="location.href='gesi_zak.html'">글쓰기</button>
-      <button class="btn11" onClick="location.href='write_gesi.html'">내가 작성한 글</button>
-      <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
-      <button class="btn9">로그아웃</button>
-
+      <button class="btn10" onClick="location.href='notice.html'">
+        공지사항
+      </button>
+      <button class="btn12" onClick="location.href='gesi_zak.html'">
+        글쓰기
+      </button>
+      <button class="btn8" onClick="location.href='mypage.html'">
+        마이페이지
+      </button>
+      <button class="btn9" onClick="location.href='logout'">
+        로그아웃</button>
     </div>
 
     <h2>공지사항</h2>
 
     
-
+<div class="content">
     <div class="title1">
       <h3>공동구매 안전수칙</h3>
     </div>
@@ -274,9 +319,11 @@ bottom: 480px;
         </li>
     </ul>
 
-
+  </div>
+</div>
 
   </body>
   <a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
-  
+
 </html>
+

@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>공구칭구</title>
 
+    <!--탭 로고-->
+    <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
+    
     <script>
 
       //변수담기
@@ -73,6 +77,45 @@
       </script>
       
     <style>
+
+
+/*모바일 반응형*/
+      @media screen and (max-width:767px){
+        
+        .all,.imgclass{
+          zoom:70%;
+          margin: 0 auto;
+
+          display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+
+        }
+        
+      }
+
+    
+  
+
+        /*모든요소 중앙배열*/
+        .all{
+            width:1200px;
+            margin: 0 auto;
+
+        }
+
+        .imgclass{
+        width:1200px;
+        margin: 0 auto;
+    }
+    
+        /*전체 비율수정*/
+        body{
+            zoom:67%;
+        }
+
       img {
         margin: auto;
         display: block;
@@ -178,14 +221,23 @@ top:180px;
 }
 
 
+
+
+
+    
+
     </style>
   </head>
   <body>
 
     <!--로고 클릭시 메인 페이지 이동-->
     <a href="home.html">
+      <div class="imgclass">
     <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
     </a>
+    </div>
+
+    <div class="all">
 
     <div class="c1">
     
@@ -257,6 +309,7 @@ top:180px;
       onclick="check();"
     />
 
+</div>
 </div>
 </div>
 </form>

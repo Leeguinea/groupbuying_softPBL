@@ -5,14 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>공구칭구</title>
+     <!--탭 로고-->
+     <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
 
+    <script>
+       function adjustScrollPosition() {
+      window.scrollTo(0, 0); // 페이지 로드 시 스크롤을 맨 위로 이동
+    }
+    </script>
 
     <style>
 
-/*전체적 비율수정*/
-body {
-    zoom: 70%;
+      /*모바일 반응형*/
+@media screen and (max-width:767px){
+        
+        body{
+          zoom:50%;
+        }
+
+    
+        }
+
+    
+        
+
+        /*모든요소 중앙배열*/
+        .all{
+            width:1400px;
+            margin: 0 auto;
+
+        }
+
+    .imgclass{
+        width:1400px;
+        margin: 0 auto;
+    }
+    
+  
+    /*오른쪽 불필요한 여백 제거*/
+    body {
+    padding-right: 0;
+    overflow-x: hidden;
   }
+      
 
       img {
         position: relative;
@@ -73,23 +108,14 @@ body {
       /*마이페이지 글씨*/
       h3{
         font-size: 34pt;
-        
-position: relative;
-left: 88px;
-bottom: 450px;
+        position: relative;
+        left: 88px;
+        bottom: 450px;
 
 
       }
-      h4{
-        font-size: 25pt;
 
-position: relative;
-left: 200px;
-bottom: 450px;
-      }
-
-     
-
+  
       span {
         position: relative;
         left: 230px;
@@ -98,15 +124,28 @@ bottom: 450px;
       }
 
 
-     
+     /*나의 정보 표 제목*/
+
+     caption.information{
+      font-size: 25pt;
+      font-weight: bold;
+
+      position: relative;
+      
+      right:400px;
+     }
+
+      /*나의 정보 표*/
       table {
        
-        margin: 0 auto;  /*표 가운데 정렬*/
+        margin: 0 auto;/*표 가운데 정렬*/
             border-collapse: collapse;
             position: relative;
-            bottom:500px;
+            margin-top: 50px;
             width: 1000px; 
             height: 400px;
+
+            margin-bottom: 60px;
         }
 
         th, td {
@@ -127,8 +166,97 @@ bottom: 450px;
 
         }
 
-       
-   
+       /*내가 작성한 글 제목*/
+
+       caption.wirte{
+        font-size: 25pt;
+      font-weight: bold;
+
+      position: relative;
+      right:520px;
+      color: #000000;
+       }
+
+     /*내가 작성한 글 표*/
+   .sub_news,
+      .sub_news th,
+      .sub_news td {
+        border: 0;
+      }
+
+      /*게시글 제목 하이퍼링크 색상*/
+      .sub_news a {
+        color: #383838;
+        text-decoration: none;
+      }
+
+      .sub_news {
+        margin: 0 auto;
+        width: 100%;
+        border-bottom: 1px solid #999;
+        color: #666;
+        font-size: 12px;
+        table-layout: fixed;
+
+        
+        position: relative;
+        left:200px;
+        
+      }
+
+
+      .sub_news th {
+        padding: 5px 0 6px;
+        border-top: solid 1px #999;
+        border-bottom: solid 1px #b2b2b2;
+        background-color: #f1f1f4;
+        color: #333;
+        font-weight: bold;
+        line-height: 20px;
+        vertical-align: top;
+      }
+
+      .sub_news td {
+        padding: 8px 0 9px;
+        border-bottom: solid 1px #d2d2d2;
+        text-align: center;
+        line-height: 18px;
+      }
+
+      /*게시글 날짜, 조회수*/
+      .sub_news .date,
+      .sub_news .hit {
+        padding: 0;
+        font-family: Tahoma;
+        font-size: 11px;
+        line-height: normal;
+      }
+
+      /*게시글 제목*/
+      .sub_news .title {
+        text-align: left;
+        padding-left: 130px;
+        font-size: 13px;
+        
+        
+        
+      }
+      /*여백설정*/
+      .sub_news .title .pic,
+      .sub_news .title .new {
+        margin: 0 0 2px;
+        vertical-align: middle;
+      }
+
+      table{
+
+        position: relative;
+        bottom:500px;
+      }
+
+ 
+
+
   
 
       /*개인정보 변경 버튼*/
@@ -140,8 +268,8 @@ bottom: 450px;
   border-radius: 3px;
 
         position: relative;
-        left: 920px;
-        bottom : 950px;
+     
+        bottom : 1020px;
       }
 
        /*회원탈퇴 버튼*/
@@ -151,14 +279,19 @@ bottom: 450px;
   padding: 10px 20px;
   border: 1px solid rgb(133, 133, 133);
   border-radius: 3px;
-  left: 940px;
+
 
 
         position: relative;
      
-        bottom: 950px;
+        bottom: 1020px;
       }
 
+      /*정보변경, 탈퇴 버튼 그룹*/
+      .buttons{
+        position: relative;
+        left: 990px;
+      }
    
 
 
@@ -208,17 +341,7 @@ bottom: 450px;
 
       }
 
-      /*상단 내가 작성한 글 버튼*/
-      .btn11 {
-        color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
-
-        position: relative;
-        bottom: 640px;
-        
-      }
+ 
 
          /*상단 글쓰기 버튼*/
          .btn12 {
@@ -239,18 +362,24 @@ bottom: 450px;
       .top{
 
         position: relative;
-        right:90px;
-        left:778px;
+        left:938px;
       }
 
     </style>
   </head>
-  <body>
+  <!--페이지 로드 시 스크롤을 맨 위로 이동 -->
+  <body onload="adjustScrollPosition()">
      <!--로고 클릭시 메인 페이지 이동-->
+   
      <a href="home.html">
+        <div class="imgclass">
     <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
     </a>
+</div>
 
+
+
+<div class="all">
     <div class="search">
       <input type="text" placeholder="공동구매 검색어를 입력하세요." />
     </div>
@@ -263,9 +392,8 @@ bottom: 450px;
      
       <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
       <button class="btn12" onClick="location.href='gesi_zak.html'">글쓰기</button>
-      <button class="btn11" onClick="location.href='write_gesi.html'">내가 작성한 글</button>
       <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
-      <button class="btn9">로그아웃</button>
+      <button class="btn9" onClick="location.href='logout'">로그아웃</button>
      
     </div>
 
@@ -273,13 +401,13 @@ bottom: 450px;
     <h3>마이페이지</h3>
 
 
-    <h4>나의 정보</h4>
 
    
 
-    <!--정보-->
+    <!--나의 정보-->
 
-    <table>
+    <table> 
+      <caption class="information">나의 정보</caption>
       <thead>
       
         <!--표 윗줄에 선 추가-->
@@ -314,14 +442,54 @@ bottom: 450px;
     
 
 
-    <div>
+    <div class="buttons">
       <button class="btn4" onClick="location.href='information_change.html'">개인정보 변경</button>
       <button class="btn5" onClick="location.href='withdrawal.html'">회원탈퇴 </button>
 
     </div>
 
+    <!--내가 작성한 글 표-->
+<table
+      class="sub_news"
+      border="1"
+      cellspacing="0"
+      summary="게시판의 글제목 리스트">
+      <caption class="wirte">내가 작성한 게시글</caption>
+    
+    
+
+  
+   
+      <colgroup>
+        <col />
+        <col width="110" />
+        <col width="100" />
+        <col width="80" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">제목</th>
+          <th scope="col">작성일</th>
+          <th scope="col">조회수</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <div th:each="myboard: ${boardList}">
+        <tr>
+          <td class="title">
+            <a  scope="col" th:text="${myboard.title}"></a>
+          </td>
+          <td class="date" th:text="${myboard.date}"></td>
+          <td class="hit"></td>
+        </tr>
+        </div>
+      </tbody>
+    </table>
+</div>
     
 
 </div>
   </body>
+  <a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
 </html>

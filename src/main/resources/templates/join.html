@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>공구칭구</title>
+     <!--탭 로고-->
+     <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
 
     <script>
 //변수담기
@@ -17,8 +20,8 @@ var phone1 = document.getElementById("phone1");
 var phone2 = document.getElementById("phone2");
 var phone3 = document.getElementById("phone3");
 var year = document.getElementById("year");
-var month = document.getElementById("month");
-var date = document.getElementById("date");
+var selectBox = document.getElementById("month");
+var day = document.getElementById("day");
 
 
 //공백검사
@@ -70,18 +73,18 @@ if(year.value==""){
   return false;
 }
 
-/*
-if(month.value==""){
+
+if(selectBox.value==""){
   alert("월을 선택하세요.");
-  month.focus(); //커서이동
+  selectBox.focus(); //커서이동
   return false;
 }
-  */
 
 
-if(date.value==""){
+
+if(day.value==""){
   alert("일을 입력하세요.");
-  date.focus(); //커서이동
+  day.focus(); //커서이동
   return false;
 }
   
@@ -117,6 +120,39 @@ document.join.submit();
     </script>
 
     <style>
+
+
+/*모바일 반응형*/
+@media screen and (max-width:767px){
+        
+        .all,.imgclass{
+          zoom:70%;
+          margin: 0 auto;
+
+    
+        }
+        
+      }
+
+    /*모든요소 중앙배열*/
+    .all{
+            width:1200px;
+            margin: 0 auto;
+
+        }
+
+        /*이미지 중앙배열*/
+    .imgclass{
+        width:1200px;
+        margin: 0 auto;
+    }
+
+        
+      /*전체 비율수정*/
+      body{
+            zoom:67%;
+        }
+
       img {
         margin: auto;
         display: block;
@@ -251,9 +287,14 @@ document.join.submit();
 
      <!--로고 클릭시 메인 페이지 이동-->
      <a href="home.html">
+      <div class="imgclass">
        <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
 
      </a>
+    </div>
+     </form>
+
+     <div class="all">
 
     <div class="c1">
       <div class="id">
@@ -329,7 +370,7 @@ document.join.submit();
           <option value="11월">11월</option>
           <option value="12월">12월</option>
         </select>
-        <input type="number" name="day" style="position: relative; left:35px;" placeholder="일" />
+        <input type="number" name="day" id="day" style="position: relative; left:35px;" placeholder="일" />
       </div>
     </div>
 
@@ -340,7 +381,7 @@ document.join.submit();
     </div>
 
   </form>
-
+</div>
 
 
 

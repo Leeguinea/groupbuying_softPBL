@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공구칭구</title>
+     <!--탭 로고-->
+     <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
 <script>
 
     //변수담기
 function check(){
 var id = document.getElementById("id");
 var nickname = document.getElementById("pwd");
-var eu = document.getElementById("eu");
+var selectBox = document.getElementById("eu");
 
 
 
@@ -28,14 +31,14 @@ if(pwd.value==""){
   return false;
 }
 
-/*
-if(eu.value == ""){
+
+if( selectBox.value == ""){
     alert("탈퇴사유를 선택해주세요.");
-  eu.focus(); //커서이동
+    selectBox.focus(); //커서이동
   return false;
 
 }
-*/
+
 
 
 
@@ -54,6 +57,31 @@ document.join.submit();
 
 </script>
     <style>
+
+        /*모바일 반응형*/
+@media screen and (max-width:767px){
+        
+    .all,.imgclass{
+          zoom:70%;
+          margin: 0 auto;
+
+    
+        }
+        
+      }
+
+        /*모든요소 중앙배열*/
+    .all{
+            width:1200px;
+            margin: 0 auto;
+
+        }
+
+        /*이미지 중앙배열*/
+    .imgclass{
+        width:1200px;
+        margin: 0 auto;
+    }
 
         body{
             zoom:70%;
@@ -161,9 +189,12 @@ document.join.submit();
 <body>
 <!--로고 클릭시 메인 페이지 이동-->
 <a href="home.html">
+    <div class="imgclass">
     <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
 </a>
+</div>
 
+<div class="all">
 <form method="post">
     <div class="c1">
         <div class="id" >
@@ -183,10 +214,10 @@ document.join.submit();
 
                 <select id="eu" style="width:694px; height:45px; position:relative; bottom:33px; font-size:30pt" >
                     <option value="">사유를 선택해주세요</option>
-                    <option value="">사이트가 불만족스러움</option>
-                    <option value="">잘 사용하지 않음</option>
-                    <option value="">재가입</option>
-                    <option value="">기타</option>
+                    <option value="eu1">사이트가 불만족스러움</option>
+                    <option value="eu2">잘 사용하지 않음</option>
+                    <option value="eu3">재가입</option>
+                    <option value="eu4">기타</option>
 
                 </select>
 
@@ -205,7 +236,7 @@ document.join.submit();
         </div>
 
 </form>
-
+</div>
 
 </body>
 </html>
