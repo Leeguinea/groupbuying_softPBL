@@ -5,10 +5,7 @@ import com.example.GroupBuying.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
@@ -78,7 +75,7 @@ public class MemberController {
         return "list";
     }
 
-    @GetMapping("/member/{id}")  //회원정보 상세조회
+    @GetMapping("/GroupBuying/{id}")  //회원정보 상세조회
     public String findById(@PathVariable String id, Model model) {
         MemberDTO memberDTO = memberService.findById(id); //내가 조회하는 데이터가 1명일때는 DTO로 리턴 타입을 정한다.
         model.addAttribute("member", memberDTO);
@@ -91,7 +88,7 @@ public class MemberController {
         return "home";
     }
 
-    @GetMapping("/GroupBuying/mypage")
+    @GetMapping("/mypage")
     public String mypage() {
         return "mypage";
     }
@@ -101,21 +98,26 @@ public class MemberController {
     public String updateForm(HttpSession session, Model model) {
         String myId = (String) session.getAttribute("loginId");
         MemberDTO memberDTO = memberService.updateForm(myId); //myId로 조회해서 DTO에 가져온다.
-        model.addAttribute("updateMember", memberDTO);
+        model.addAttribute("updateMember", memberDTO);//model에 담아서 아래 HTML 로 간다.
         return "information_change";
     }
 
     @PostMapping("/mypage/information_change")  //사용자가 입력한 값을 받아오는 컨트롤러
-
     public String update(@ModelAttribute MemberDTO memberDTO) {
         memberService.update(memberDTO); //서비스의 업데이트 메소드 호출
         return "redirect:/GroupBuying/" + memberDTO.getId();
     }
 
+    @GetMapping("/GroupBuying/delete/{id}")
+    public String deleteById(@PathVariable Long id) {
+        memberService.deleteById(id);
+        return "redirect:/GroupBuying/";
+    }
 
-    //test2
-
-
-
-
+    @PostMapping("/GroupBuying/id-check")
+    public @ResponseBody String idCheck(@RequestParam("id") String id) {
+        System.out.println("id = " + id);
+        String checkResult = memberService.idCheck(id);
+        return checkResult;
+    }
 }

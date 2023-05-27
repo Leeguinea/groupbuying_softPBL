@@ -51,18 +51,8 @@ public class MemberService {
     }
 
 
-    public MemberDTO updateForm(String myId) { //Id로 DB에서 회원정보를 조회하는것.
-        Optional<MemberEntity> optionalMemberEntity = memberRepository.findById(myId);
-        if(optionalMemberEntity.isPresent()) {
-           return MemberDTO.toMemberDTO(optionalMemberEntity.get());
-        } else {
-            return null;
-        }
-    }
 
-    public void update(MemberDTO memberDTO) {
-        memberRepository.save(MemberEntity.toUpdateMemberEntity(memberDTO));
-    }
+
 
     public List<MemberDTO> findALL() {
         List<MemberEntity> memberEntityList = memberRepository.findAll();
@@ -83,6 +73,37 @@ public class MemberService {
         } else {
             return null;
         }
+    }
+
+
+    public MemberDTO updateForm(String myId) { //Id로 DB에서 회원정보를 조회하는것.
+        Optional<MemberEntity> optionalMemberEntity = memberRepository.findById(myId);
+        if(optionalMemberEntity.isPresent()) {
+            return MemberDTO.toMemberDTO(optionalMemberEntity.get());
+        } else {
+            return null;
+        }
+    }
+
+    public void update(MemberDTO memberDTO) {
+        memberRepository.save(MemberEntity.toUpdateMemberEntity(memberDTO));
+    }
+
+    public void deleteById(Long id) {
+        memberRepository.deleteById(id);
+    }
+
+    public String idCheck(String id) {
+        Optional<MemberEntity> byId = memberRepository.findById(id);
+        if (byId.isPresent()) {
+            //조회결과가 있다 -> 해당 아이디는 사용 불가
+            return null;
+
+        } else {
+            //조회결과가 없다. -> 사용할 수 있다.
+            return "ok";
+        }
+
     }
 }
 

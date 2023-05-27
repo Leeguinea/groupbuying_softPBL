@@ -44,8 +44,7 @@ public class MemberEntity {
     @Column
     private String day;
 
-
-    @Column(unique = true) //unique 제약 조건 추가
+    @Column //unique 제약 조건 추가
     private String id;
 
     @OneToMany(mappedBy = "member")
