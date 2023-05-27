@@ -208,11 +208,26 @@ h1, h2, h3 {
   font-size: 10px;
   margin-top: 50px;
 }
+@media (max-width: 768px) {
+ 
+  
+ .searchclass {
+ 
+   zoom:66%;
+  } 
+  .logo{
+    display:none;
+    
+  } 
+
+}
+
     </style>
 </head>
 <body>
     <header>
-      <img src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
+      <img class="logo" src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
+      <div class="searchclass">
       <div class="search">
             <form method="get" th:action="@{/gesi}">
           <input type="text" name="searchKey" placeholder="공동구매 검색어를 입력하세요">
@@ -230,6 +245,7 @@ h1, h2, h3 {
             <a href="/logout">로그아웃</a>
             </th:if>
         </div>
+      </div>
     </header>
     
    <main>
@@ -294,20 +310,20 @@ h1, h2, h3 {
 <section class="icon">
   <div class="icon-item">
     <a href="notice.html">
-      <img src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/noti.png" alt="아이콘1" style="position: absolute; top: 380px; left: 115px; width: 10.33%;">
+      <img src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/noti.png" alt="아이콘1" style="position: relative; top: 20px; left: 10px; width: 30.33%;">
       <!-- <p class="gongi_p">공지사항</p> -->
     </a>
   </div>
   <div class="icon-item">
     <a href="gesi_zak.html">
-      <img src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/gezak.png" alt="아이콘2" style="position: absolute; top: 380px; left: 45.33%; width: 10.33%;">
+      <img src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/gezak.png" alt="아이콘2" style="position: relative; top: 20px; left: 0px; width: 30.33%;">
       <!-- <p class="zak_p">게시글 작성하기</p> -->
     </a>
   </div>
   <div class="icon-item">
     <a href="real_fi_gesi.html">
-      <img src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/geba.png" alt="아이콘3" style="position: absolute; top: 380px; left: 80.66%; width: 10.33%;">
-      <!-- <p class="pan_p">게시판 바로가기</p> -->
+      <img src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/geba.png" alt="아이콘3" style="position: relative; top: 20px; left: 0px; width: 30.33%;">
+ <!-- <p class="pan_p">게시판 바로가기</p> -->
     </a>
   </div>
 </section>
