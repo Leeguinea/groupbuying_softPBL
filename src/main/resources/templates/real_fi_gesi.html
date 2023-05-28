@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공구칭구</title>
     <style>
+        .all{
+            width:100%;
+            margin: 0 auto;
+
+        }
+
+        .imgclass{
+            width:100%;
+            margin: 0 auto;
+        }
         header {
 	background-color: #ffffff;
 	padding: 10px 20px;
@@ -68,9 +78,9 @@
         .post {
   margin: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f7f7f7;
+            border: 1px solid #cdcdcd;
+            border-radius: 10px;
+            background-color: #ffffff;
 }
 
 .post .title {
@@ -119,6 +129,7 @@
   border-radius: 10px; /*동그랗게*/
   cursor: pointer;
   font-size: 16px;
+        font-weight: bold;
 }
 span {
   font-size: smaller;
@@ -142,17 +153,55 @@ function toggleFavorite() {
 .favorite-button.filled {
   background-color: #000000;
 }
+    @media (max-width: 768px) {
+        /* Styles for screens larger than 768px */
+        .all{
+            width:auto;
+            margin: 0 auto;
+        }
+        .imgclass{
+            width:auto;
+            margin:auto;
+        }
 
 
+
+        .searchclass {
+
+            zoom:59%;
+        }
+        img{
+            display:none;
+
+        }
+
+    }
+
+    @media (min-width: 1024px) {
+        .all{
+            width:1000px;
+            margin: 0 auto;
+
+        }
+
+        .imgclass{
+            width:1400px;
+            margin: 0 auto;
+        }
+    }
 
   </style>
   
 </head>
 <body>
+<div class="all">
 	<header>
+        <div class=imgclass>
     <a href="home.html">
       <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
     </a>
+        </div>
+        <div class="searchclass">
     <div class="search">
 			<input type="text" placeholder="공동구매 검색어를 입력하세요.">
 			<button type="submit">검색</button>
@@ -162,14 +211,16 @@ function toggleFavorite() {
       <a href="#jjim">찜</a>
 			<a href="#myPage">마이페이지</a>
 			<a href="#logout">로그아웃</a>
-     
-		</div>
-	</header>
+
+        </div>
+        </div>
+    </header>
+
 <div class="post">
-  <span id="post1">아이디</span>
+    <span id="post1">(아이디)</span>
   <button class="favorite-button"></button>
-  <h2 class="title">제목1</h2>
-  <p class="content">내용1</p>
+    <h2 class="title">(제목1)</h2>
+    <p class="content">(내용1)</p>
   <div class="post-meta">
     <a href="snagse_page.html">
     <button class="join-button">상세보기</button>
@@ -178,27 +229,23 @@ function toggleFavorite() {
   </div>
 </div>
 <div class="post">
-  <span id="post2">아이디</span>
+    <span id="post2">(아이디)</span>
   <button class="favorite-button"></button>
-  <h2 class="title">제목2</h2>
-  <p class="content">내용2</p>
+    <h2 class="title">(제목2)</h2>
+    <p class="content">(내용2)</p>
   <div class="post-meta">
     <a href="snagse_page.html">
     <button class="join-button">상세보기</button>
     </a>
     <p class="time">2023-04-13</p>
   </div>
-</div>
 
-  
-			
-		</div>
 	</div>
   <div class="post">
-    <span id="post2">아이디</span>
+      <span id="post2">(아이디)</span>
     <button class="favorite-button"></button>
-		<h2 class="title">제목3</h2>
-		<p class="content">내용3</p>
+      <h2 class="title">(제목3)</h2>
+      <p class="content">(내용3)</p>
 		<div class="post-meta">
       <a href="snagse_page.html">
       <button class="join-button">상세보기</button>
@@ -207,6 +254,7 @@ function toggleFavorite() {
 
 		</div>
 	</div>
+</div>
 </body>
 </html>
 

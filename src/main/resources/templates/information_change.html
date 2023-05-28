@@ -1,284 +1,284 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>공구칭구</title>
 
     <style>
-      img {
-        position: relative;
-        left: 0px;
-        bottom: 180px;
-      }
+        img {
+            position: relative;
+            left: 0px;
+            bottom: 180px;
+        }
 
-      /*검색창*/
-      .search {
-        position: relative;
-        bottom: 460px;
-        left: 550px;
+        /*검색창*/
+        .search {
+            position: relative;
+            bottom: 460px;
+            left: 550px;
 
-        align-items: center;
-      }
+            align-items: center;
+        }
 
-      /*검색창 사이즈*/
-      .search input[type="text"] {
-        width: 650px;
-        height: 50px;
+        /*검색창 사이즈*/
+        .search input[type="text"] {
+            width: 650px;
+            height: 50px;
 
-        padding: 10px;
-        border: 1px solid #6a6a6a;
-        border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #6a6a6a;
+            border-radius: 5px;
 
-        font-size: 25px;
-      }
+            font-size: 25px;
+        }
 
-      /* 검색 버튼 */
-      .btn1 {
-        background-color: #f7c111;
-        color: white;
-        border-radius: 5px;
-        border: none;
+        /* 검색 버튼 */
+        .btn1 {
+            background-color: #f7c111;
+            color: white;
+            border-radius: 5px;
+            border: none;
 
-        width: 100px;
-        height: 70px;
-        font-size: 23px;
+            width: 100px;
+            height: 70px;
+            font-size: 23px;
 
-        position: relative;
-        bottom: 530px;
-        left: 1250px;
-      }
+            position: relative;
+            bottom: 530px;
+            left: 1250px;
+        }
 
-      h2 {
-        font-size: 45pt;
+        h2 {
+            font-size: 45pt;
 
-        position: relative;
-        left: 150px;
-        bottom: 510px;
-      }
+            position: relative;
+            left: 150px;
+            bottom: 510px;
+        }
 
-      
 
-      /*상단 마이페이지 버튼*/
-      .btn8 {
-        color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
 
-        position: relative;
-        bottom: 640px;
-        left: 1125px;
-      }
+        /*상단 마이페이지 버튼*/
+        .btn8 {
+            color: #878787;
+            background-color: white;
+            font-size: 22px;
+            border: none;
 
-      /*상단 로그아웃 버튼*/
-      .btn9 {
-        color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
+            position: relative;
+            bottom: 640px;
+            left: 1125px;
+        }
 
-        position: relative;
-        bottom: 640px;
-        left: 1140px;
-      }
+        /*상단 로그아웃 버튼*/
+        .btn9 {
+            color: #878787;
+            background-color: white;
+            font-size: 22px;
+            border: none;
+
+            position: relative;
+            bottom: 640px;
+            left: 1140px;
+        }
 
         /*상단 공지사항 버튼*/
         .btn10{
-        color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
+            color: #878787;
+            background-color: white;
+            font-size: 22px;
+            border: none;
 
-        position: relative;
-        bottom:640px;
-        left:1105px;
+            position: relative;
+            bottom:640px;
+            left:1105px;
 
-      }
+        }
 
         /*상단 찜 버튼*/
         .btn11{
-          color: #878787;
-        background-color: white;
-        font-size: 22px;
-        border: none;
+            color: #878787;
+            background-color: white;
+            font-size: 22px;
+            border: none;
 
-        position: relative;
-        bottom: 640px;
-        left: 1120px;
-      }
+            position: relative;
+            bottom: 640px;
+            left: 1120px;
+        }
 
-       /* 상단 4개버튼 위치이동*/
-       .top{
+        /* 상단 4개버튼 위치이동*/
+        .top{
 
-position: relative;
-right:90px;
-}
+            position: relative;
+            right:90px;
+        }
 
-      /*새로운 닉네임을 입력하세요*/
-      .p1 {
-        font-size: 30pt;
+        /*새로운 닉네임을 입력하세요*/
+        .p1 {
+            font-size: 30pt;
 
-        position: relative;
-        left: 200px;
-        bottom: 470px;
-      }
+            position: relative;
+            left: 200px;
+            bottom: 470px;
+        }
 
-      /* 새 닉네임창*/
-      .new_nickname {
-        position: relative;
-        left: 280px;
-        bottom: 470px;
+        /* 새 닉네임창*/
+        .new_nickname {
+            position: relative;
+            left: 280px;
+            bottom: 470px;
 
-        font-size: 25pt;
-      }
+            font-size: 25pt;
+        }
 
-      /*새 비밀번호를 입력해주세요.*/
-      .p2 {
-        font-size: 30pt;
+        /*새 비밀번호를 입력해주세요.*/
+        .p2 {
+            font-size: 30pt;
 
-        position: relative;
-        left: 200px;
-        bottom: 390px;
-      }
+            position: relative;
+            left: 200px;
+            bottom: 390px;
+        }
 
-      /*현재 비밀번호창*/
-      .p3 {
-        position: relative;
-        left: 280px;
-        bottom: 380px;
+        /*현재 비밀번호창*/
+        .p3 {
+            position: relative;
+            left: 280px;
+            bottom: 380px;
 
-        font-size: 25pt;
-      }
+            font-size: 25pt;
+        }
 
-      /*새 비밀번호창*/
-      .p4 {
-        position: relative;
-        left: 280px;
-        bottom: 380px;
+        /*새 비밀번호창*/
+        .p4 {
+            position: relative;
+            left: 280px;
+            bottom: 380px;
 
-        font-size: 25pt;
-      }
+            font-size: 25pt;
+        }
 
-      /*비밀번호 재확인창*/
-      .p5 {
-        position: relative;
-        left: 280px;
-        bottom: 380px;
+        /*비밀번호 재확인창*/
+        .p5 {
+            position: relative;
+            left: 280px;
+            bottom: 380px;
 
-        font-size: 25pt;
-      }
+            font-size: 25pt;
+        }
 
-      /*취소버튼*/
-      .btn2 {
-        position: relative;
-        bottom: 100px;
-        background: #fdce50;
+        /*취소버튼*/
+        .btn2 {
+            position: relative;
+            bottom: 100px;
+            background: #fdce50;
 
-        width: 213px;
-        height: 69px;
-        font-size: 30px;
-        color: white;
-        font-weight: bold;
+            width: 213px;
+            height: 69px;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
 
-        border: none;
-      }
+            border: none;
+        }
 
-      /*변경버튼*/
-      .btn3 {
-        position: relative;
-        bottom: 100px;
-        background: #fdce50;
+        /*변경버튼*/
+        .btn3 {
+            position: relative;
+            bottom: 100px;
+            background: #fdce50;
 
-        width: 213px;
-        height: 69px;
-        left:100px;
-        font-size: 30px;
-        color: white;
-        font-weight: bold;
+            width: 213px;
+            height: 69px;
+            left:100px;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
 
-        border: none;
-      }
+            border: none;
+        }
 
-      /*버튼 위치조정*/
-      .button{
+        /*버튼 위치조정*/
+        .button{
 
-position: relative;
-        bottom:200px;
-        text-align: center;
-      }
+            position: relative;
+            bottom:200px;
+            text-align: center;
+        }
 
 
     </style>
-  </head>
-  <body>
+</head>
+<body>
 
-    <!--이미지 클릭시 메인 페이지 이동-->
-    <a href="home.html">
+<!--이미지 클릭시 메인 페이지 이동-->
+<a href="home.html">
     <img src="/Users/jeanmori/Desktop/3-1/soft/icon/logo.png" />
-    </a>
+</a>
 
-    <div class="search">
-      <input type="text" placeholder="공동구매 할 검색어를 입력하세요." />
-    </div>
+<div class="search">
+    <input type="text" placeholder="공동구매 할 검색어를 입력하세요." />
+</div>
 
-    <div>
-      <input type="submit" class="btn1" value="검색" />
-    </div>
+<div>
+    <input type="submit" class="btn1" value="검색" />
+</div>
 
-    <div class="top">
-      <button class="btn11" onClick="location.href='love.html'">
+<div class="top">
+    <button class="btn11" onClick="location.href='love.html'">
         찜
-      </button>
-      <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
-      <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
-      <button class="btn9">로그아웃</button>
-      <p th:text="${session.loginId}"></p>
-    </div>
+    </button>
+    <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
+    <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
+    <button class="btn9">로그아웃</button>
+    <p th:text="${session.loginId}"></p>
+</div>
 
-    <h2>개인정보 변경</h2>
+<h2>개인정보 변경</h2>
 
-    <form action="/mypage/information_change" method="post">
-      <input type="hidden" th:value="${updateMember.id}" name="id"><br>
-      <!--닉네임 변경-->
-      <div class="nickname">
+<form action="/mypage/information_change" method="post">
+    <input type="hidden" th:value="${updateMember.id}" name="id"><br>
+    <!--닉네임 변경-->
+    <div class="nickname">
         <p class="p1">새로운 닉네임을 입력해주세요.</p>
 
         <p class="new_nickname">
-          새 닉네임
-          <input type="text" th:value="${updateMember.nickname}" name="nickname" style="width: 694px; height: 40px; font-size: 20pt"/><br>
+            새 닉네임
+            <input type="text" th:value="${updateMember.nickname}" name="nickname" style="width: 694px; height: 40px; font-size: 20pt"/><br>
         </p>
-      </div>
+    </div>
 
-      <!--비밀번호 변경-->
-      <div class="pwd">
+    <!--비밀번호 변경-->
+    <div class="pwd">
         <p class="p2">새로운 비밀번호를 입력해주세요.</p>
 
         <p class="p3">
-          현재 비밀번호
-          <input type="password" th:value="${updateMember.pwd}" name="currentPwd" style="width: 694px; height: 40px; font-size: 20pt"/>
+            현재 비밀번호
+            <input type="password" th:value="${updateMember.pwd}" name="currentPwd" style="width: 694px; height: 40px; font-size: 20pt"/>
         </p>
 
         <p class="p4">
-          새 비밀번호
-          <input type="password" name="pwd" style="width: 694px; height: 40px; font-size: 20pt" placeholder="비밀번호는 8~16자이내만 가능합니다."/><br>
+            새 비밀번호
+            <input type="password" name="pwd" style="width: 694px; height: 40px; font-size: 20pt" placeholder="비밀번호는 8~16자이내만 가능합니다."/><br>
         </p>
 
         <p class="p5">
-          비밀번호 재확인
-          <input type="password" name="confirmPwd" id="confirmPwd" style="width: 694px; height: 40px; font-size: 20pt  " placeholder="비밀번호는 8~16자이내만 가능합니다." /><br>
+            비밀번호 재확인
+            <input type="password" name="confirmPwd" id="confirmPwd" style="width: 694px; height: 40px; font-size: 20pt  " placeholder="비밀번호는 8~16자이내만 가능합니다." /><br>
         </p>
-      </div>
+    </div>
 
 
     <div class="button">
-    <input type="button" class="btn2" value="취소" onClick="location.href='mypage.html'"/>
-    <input type="submit" class="btn3" value="개인정보수정" ;
-      onclick="alert('변경이 완료되었습니다.')"
-    />
+        <input type="button" class="btn2" value="취소" onClick="location.href='mypage.html'"/>
+        <input type="submit" class="btn3" value="개인정보수정" ;
+               onclick="alert('변경이 완료되었습니다.')"
+        />
 
-</div>
+    </div>
 </form>
-  </body>
+</body>
 </html>
