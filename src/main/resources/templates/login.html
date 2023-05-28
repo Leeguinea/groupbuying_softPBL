@@ -4,14 +4,90 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>공구칭구</title>
 
     <style>
+        body{
+            zoom: 80%;
+            margin-top: -5%;
+        }
+        /* Common styles */
+.wrap {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.login_id input,
+.login_pw input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.submit input {
+  width: 100%;
+  height: 70px;
+}
+
+/* Responsive styles */
+@media (min-width: 769px) {
+  /* Styles for screens larger than 768px */
+  .wrap {
+    max-width: 500px;
+  }
+
+  .login_id input,
+  .login_pw input {
+    width: 100%;
+    height: 80px;
+  }
+
+  .submit input {
+    width: 100%;
+    height: 90px;
+  }
+    img{
+        right: 0px;
+    }
+}
+        @media (max-width: 768px) {
+            img{
+                zoom: 70%;
+                margin-top: 80px;
+            }
+        }
+
+@media (min-width: 1024px) {
+  /* Styles for screens larger than 1024px */
+  .wrap {
+    max-width: 700px;
+  }
+
+  .login_id input,
+  .login_pw input {
+    width: 100%;
+      height: 65%;
+  }
+
+  .submit input {
+    width: 100%;
+      height: 75%;
+  }
+    img{
+        right: 100px;
+  }
+}
+
         img{
             position: absolute;
-            width: 500px;
+            width: 530px;
             height: 101px;
-            left: 470px;
+            /* left: 250px; */
+            margin-left: 100px;
             top: 116px;
             background: url(https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png);
         }
@@ -25,10 +101,10 @@
             box-sizing: border-box;
 
             position: absolute;
-            width: 517px;
+            /* width: 517px;
             height: 93px;
-            left: 479px;
-            top: 370px;
+            left: 250px; */
+            top: 290px;
 
             background: #FFFFFF;
             border: 1px solid #000000;
@@ -42,9 +118,9 @@
         }
         .input::placeholder{
             position: absolute;
-            width: 139px;
+            /* width: 139px;
             height: 29px;
-            left: 523px;
+            left: 250px; */
             top: 405px;
 
             font-family: 'Inter';
@@ -63,10 +139,10 @@
             box-sizing: border-box;
 
             position: absolute;
-            width: 517px;
+            /* width: 517px;
             height: 93px;
-            left: 479px;
-            top: 471px;
+            left: 250px; */
+            top: 400px;
 
             background: #FFFFFF;
             border: 1px solid #000000;
@@ -80,9 +156,9 @@
         }
         .login_etc {
             position: absolute;
-            width: 307px;
+            /* width: 307px;
             height: 24px;
-            left: 529px;
+            left: 250px; */
             top: 583px;
 
             font-family: 'Inter';
@@ -95,9 +171,9 @@
         }
         .forgot_id {
             position: absolute;
-            width: 100px;
+            /* width: 100px;
             height: 100px;
-            left: 250px;
+            left: 150px; */
             top: 267px;
 
             font-family: 'Inter';
@@ -110,9 +186,9 @@
         }
         .forgot_pw {
             position: absolute;
-            width: 317px;
+            /* width: 317px;
             height: 24px;
-            left: 618px;
+            left: 520px; */
             top: 850px;
 
             font-family: 'Inter';
@@ -125,16 +201,16 @@
         }
         .submit {
             margin-top: 50px;
-            width: 80%;
+            /* width: 80%; */
         }
         .submit input {
             cursor: pointer;
 
             position: absolute;
-            width: 517px;
+            /* width: 517px;
             height: 118px;
-            left: 479px;
-            top: 669px;
+            left: 250px; */
+            top: 530px;
             border: 0;
             outline: none;
             background: #F6C105;
@@ -153,36 +229,74 @@
 
 
 
+
     </style>
 </head>
 <body>
 <form action="/GroupBuying/login" method="post">
-    <a href="home">
-    <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" width="250" height="40">
-    </a>
+    
     <div class="wrap">
+        <a href="home">
+            <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" width="250" height="40">
+        </a>
+
         <div class="login">
             <div class="login_id">
                 <input type="text" name="Id" placeholder=" 아이디">
             </div>
             <div class="login_pw">
-                <input type="password" name="pwd" placeholder=" 비밀번호">
+                <input type="password" name="pwd" placeholder=" 비밀번호" maxlength='16'> <!--maxlength='16' 글자수 제한-->
             </div>
+
+        </div>
             <div class="login_etc">
-                <div class="checkbox">
+                <!-- <div class="checkbox">
                     <input type="checkbox" name="" id=""> 아이디 저장하기
-                </div>
-                <div class="forgot_id">
+                </div> -->
+                <!-- <div class="forgot_id">
                     <a href=" https://example.com/id-recovery">아이디찾기</a>
                 </div>
             </div>
             <div class="forgot_pw">
                 <a href=" https://example.com/id-recovery">비밀번호 찾기</a>
-            </div>
+            </div> -->
         </div>
+        
         <div class="submit">
-            <input type="submit" value="로그인">
+            <input type="submit" value="로그인" >
         </div>
+        
+        <script>
+        function showAlert(event) {
+    event.preventDefault(); // 기본 동작 방지
+
+    // 아이디 입력 필드 유효성 검사
+    var idField = document.getElementsByName("Id")[0];
+    var id = idField.value;
+    if (id === "") {
+        alert("아이디를 입력해주세요.");
+        idField.focus();
+        return;
+    }
+
+    // 비밀번호 입력 필드 유효성 검사
+    var pwdField = document.getElementsByName("pwd")[0];
+    var password = pwdField.value;
+    if (password === "") {
+        alert("비밀번호를 입력해주세요.");
+        pwdField.focus();
+        return;
+    }
+
+    // 유효성 검사 통과, 로그인 처리 등 다음 단계로 진행
+    // 이곳에서 필요한 로직을 추가하면 됩니다.
+
+    alert("로그인 완료되었습니다.");
+}
+
+    </script>
+        
+        
     </div>
     </div>
 </form>
@@ -198,5 +312,5 @@
 </form>
 </body>
 </html>
-    
+
 

@@ -5,6 +5,7 @@ import lombok.*;
 import lombok.Getter;
 import lombok.Setter;
 
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,6 @@ public class MemberEntity {
 
     @Column
     private String day;
-
 
     @Column //unique 제약 조건 추가
     private String id;
@@ -82,4 +82,5 @@ public class MemberEntity {
         memberEntity.setDay(memberDTO.getDay());
         return memberEntity; // 대입된 값들을 다시 service 객체로 반환
     }
+
 }

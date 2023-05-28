@@ -130,7 +130,7 @@
         <a href="/jjim">내가 작성한 글</a>
         <a href="/mypage">마이페이지</a>
         <a href="/logout">로그아웃</a>
-        <p th:text="${session.loginId}"></p>
+
     </div>
     <div class="topnav-right" th:if="${session.loginId == null}">
         <a href="/gongi">공지사항</a>
@@ -155,7 +155,7 @@
         </div>
 
     </div>
-    </div>
+</div>
 </div>
 </body>
 <a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
