@@ -5,10 +5,39 @@ import lombok.*; // lombok 라이브러리는 클래스에 어노테이션만 �
 
 @Getter
 @Setter
-@NoArgsConstructor //기본생성자를 자동 생성
 @AllArgsConstructor //모든 필드를 매개변수로 하는 생성자를 만들어준다.
 @ToString // DTO 객체가 가지고 있는 필드값을 출력할 때 메소드를 생성해준다.
 public class MemberDTO { //DTO 클래스는 회원정보에 필요한 내용들을 필드로 정리하고, 접근제한자 private 으로 필드를 감춘다. -> Getter & Setter로만 간접적으로 사용가능하게 한다.
+    private int resultCode;
+    private int errorCode;
+    // 생성자
+    public MemberDTO(int resultCode) {
+        this.resultCode = resultCode;
+    }
+    // 추가 생성자
+    public MemberDTO(int resultCode, int errorCode) {
+        this.resultCode = resultCode;
+        this.errorCode = errorCode;
+    }
+    // getter/setter
+    public int getResultCode() {
+        return resultCode;
+    }
+    public void setResultCode(int resultCode) {
+        this.resultCode = resultCode;
+    }
+    public int getErrorCode() {
+        return errorCode;
+    }
+    public void setErrorCode(int errorCode) {
+        this.errorCode = errorCode;
+    }
+
+    // 기본 생성자 추가
+    public MemberDTO() {
+        // 기본 생성자
+    }
+
 
     private Long number;//추가
     private String id;

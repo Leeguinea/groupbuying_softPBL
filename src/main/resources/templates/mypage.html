@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -73,21 +73,21 @@
         border: 1px solid #6A6A6A;
         border-radius: 5px;
 
-        
+
         font-size: 25px;
-        
+
 
 
       }
 
       /* 검색 버튼 */
       .btn1 {
-       
+
         background-color: #f7c111;
         color: white;
         border-radius: 5px;
         border: none;
-       
+
         width:100px;
         height: 70px;
         font-size: 23px;
@@ -114,7 +114,6 @@
 
 
       }
-
   
       span {
         position: relative;
@@ -123,140 +122,7 @@
         font-size: 33pt;
       }
 
-
-     /*나의 정보 표 제목*/
-
-     caption.information{
-      font-size: 25pt;
-      font-weight: bold;
-
-      position: relative;
-      
-      right:400px;
-     }
-
-      /*나의 정보 표*/
-      table {
-       
-        margin: 0 auto;/*표 가운데 정렬*/
-            border-collapse: collapse;
-            position: relative;
-            margin-top: 50px;
-            width: 1000px; 
-            height: 400px;
-
-            margin-bottom: 60px;
-        }
-
-        th, td {
-            padding: 8px;
-            text-align: center;
-            border-bottom: 1px solid #c6c6c6;
-        }
-
-        th {
-            background-color: #f2f2f2;
-            width:50px;
-            
-            
-        }
-
-        td{
-          width:250px;
-
-        }
-
-       /*내가 작성한 글 제목*/
-
-       caption.wirte{
-        font-size: 25pt;
-      font-weight: bold;
-
-      position: relative;
-      right:520px;
-      color: #000000;
-       }
-
-     /*내가 작성한 글 표*/
-   .sub_news,
-      .sub_news th,
-      .sub_news td {
-        border: 0;
-      }
-
-      /*게시글 제목 하이퍼링크 색상*/
-      .sub_news a {
-        color: #383838;
-        text-decoration: none;
-      }
-
-      .sub_news {
-        margin: 0 auto;
-        width: 100%;
-        border-bottom: 1px solid #999;
-        color: #666;
-        font-size: 12px;
-        table-layout: fixed;
-
-        
-        position: relative;
-        left:200px;
-        
-      }
-
-
-      .sub_news th {
-        padding: 5px 0 6px;
-        border-top: solid 1px #999;
-        border-bottom: solid 1px #b2b2b2;
-        background-color: #f1f1f4;
-        color: #333;
-        font-weight: bold;
-        line-height: 20px;
-        vertical-align: top;
-      }
-
-      .sub_news td {
-        padding: 8px 0 9px;
-        border-bottom: solid 1px #d2d2d2;
-        text-align: center;
-        line-height: 18px;
-      }
-
-      /*게시글 날짜, 조회수*/
-      .sub_news .date,
-      .sub_news .hit {
-        padding: 0;
-        font-family: Tahoma;
-        font-size: 11px;
-        line-height: normal;
-      }
-
-      /*게시글 제목*/
-      .sub_news .title {
-        text-align: left;
-        padding-left: 130px;
-        font-size: 13px;
-        
-        
-        
-      }
-      /*여백설정*/
-      .sub_news .title .pic,
-      .sub_news .title .new {
-        margin: 0 0 2px;
-        vertical-align: middle;
-      }
-
-      table{
-
-        position: relative;
-        bottom:500px;
-      }
-
- 
-
-
+  
   
 
       /*개인정보 변경 버튼*/
@@ -292,6 +158,7 @@
         position: relative;
         left: 990px;
       }
+
    
 
 
@@ -365,6 +232,9 @@
         left:938px;
       }
 
+
+      
+
     </style>
   </head>
   <!--페이지 로드 시 스크롤을 맨 위로 이동 -->
@@ -393,100 +263,24 @@
       <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
       <button class="btn12" onClick="location.href='gesi_zak.html'">글쓰기</button>
       <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
-      <button class="btn9" onClick="location.href='logout'">로그아웃</button>
-     
+      <button class="btn9">로그아웃</button>
     </div>
 
     <div class="total">
-    <h3>마이페이지</h3>
+    <h2>마이페이지</h2>
+
+    <i class="fa-solid fa-circle-user"></i>
+
+    <span> <b>홍길동 </b></span>
+    <span>님</span>
 
 
-
-   
-
-    <!--나의 정보-->
-
-    <table> 
-      <caption class="information">나의 정보</caption>
-      <thead>
-      
-        <!--표 윗줄에 선 추가-->
-          <tr colspan="2" style="border-bottom: 2px solid black; ">&nbsp;</tr>
-       
-      </thead>
-      <tbody>
-      
-    
-              <th>아이디</th>
-              <td class="id">gildong</td>
-          </tr>
-          <tr>
-              <th>닉네임</th>
-              <td class="nickname">길동2</td>
-          </tr>
-          <tr>
-              <th>이름</th>
-              <td class="name">홍길동</td>
-          </tr>
-          <tr>
-              <th>전화번호</th>
-              <td class="number">010-0000-0000</td>
-          </tr>
-          <tr>
-              <th>생년월일</th>
-              <td class="birth">0000-00-00</td>
-          </tr>
-      </tbody>
-  </table>
-
-    
-
-
-    <div class="buttons">
+    <div>
       <button class="btn4" onClick="location.href='information_change.html'">개인정보 변경</button>
       <button class="btn5" onClick="location.href='withdrawal.html'">회원탈퇴 </button>
 
     </div>
 
-    <!--내가 작성한 글 표-->
-<table
-      class="sub_news"
-      border="1"
-      cellspacing="0"
-      summary="게시판의 글제목 리스트">
-      <caption class="wirte">내가 작성한 게시글</caption>
-    
-    
-
-  
-   
-      <colgroup>
-        <col />
-        <col width="110" />
-        <col width="100" />
-        <col width="80" />
-      </colgroup>
-      <thead>
-        <tr>
-          <th scope="col">제목</th>
-          <th scope="col">작성일</th>
-          <th scope="col">조회수</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <div th:each="myboard: ${boardList}">
-        <tr>
-          <td class="title">
-            <a  scope="col" th:text="${myboard.title}"></a>
-          </td>
-          <td class="date" th:text="${myboard.date}"></td>
-          <td class="hit"></td>
-        </tr>
-        </div>
-      </tbody>
-    </table>
-</div>
     
 
 </div>

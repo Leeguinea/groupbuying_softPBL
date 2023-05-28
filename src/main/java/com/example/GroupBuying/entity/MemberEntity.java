@@ -4,7 +4,7 @@ import com.example.GroupBuying.dto.MemberDTO;
 import lombok.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
+
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -44,8 +44,7 @@ public class MemberEntity {
     @Column
     private String day;
 
-
-    @Column(unique = true) //unique 제약 조건 추가
+    @Column //unique 제약 조건 추가
     private String id;
 
     @OneToMany(mappedBy = "member")
@@ -68,5 +67,20 @@ public class MemberEntity {
 
 
     // 이러한 형식을 같는 테이블을 스프링데이터JPA가 DB에서 생성시켜준다.
+
+    public static MemberEntity toUpdateMemberEntity(MemberDTO memberDTO) {  // toMemberEntity 클래스 메소드 선언
+        MemberEntity memberEntity = new MemberEntity(); //객체선언
+        memberEntity.setId(memberDTO.getId()); //memeberDTO 객체의 getID 메소드로 부터 값을 얻어서, setID 메소드로 ID값을 설정
+        memberEntity.setNickname(memberDTO.getNickname());
+        memberEntity.setPwd(memberDTO.getPwd());
+        memberEntity.setName(memberDTO.getName());
+        memberEntity.setPhone1(memberDTO.getPhone1());
+        memberEntity.setPhone2(memberDTO.getPhone2());
+        memberEntity.setPhone3(memberDTO.getPhone3());
+        memberEntity.setYear(memberDTO.getYear());
+        memberEntity.setMonth(memberDTO.getMonth());
+        memberEntity.setDay(memberDTO.getDay());
+        return memberEntity; // 대입된 값들을 다시 service 객체로 반환
+    }
 
 }

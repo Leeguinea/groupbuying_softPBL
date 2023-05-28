@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공구칭구</title>
-    <!—탭 로고—>
+    <!--탭 로고-->
      <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
     <style>
     header {
@@ -97,7 +97,7 @@ img {
 
 .slideshow-container {
             position: relative;
-            max-width: 1200px;
+    max-width: 1200px; /*100%;*/
            top:50px;
         }
         
@@ -112,38 +112,69 @@ img {
         }
 
  h1{
+    /* section.icon{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+section.icon a img{
+width: 110px;
+} */
+    h1, h2, h3 {
   position: absolute;
-  top:470px;
-  left: 183px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #ffffff;
+        font-size: 15px;
+        font-weight: bold;
+        color: #ffffff;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: space-between;
+    }
+    .icon-item {
+        text-align: center;
+    }
+    .icon-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+
+
+
+    .gongi_p{
+        position: absolute;
+        top: 470px;
+        /* left: 136px; */
+        color:#ffffff;
+        font-weight: bold;
+
+    }
+
+    .zak_p, .pan_p
+    {
+        position: relative;
+        top: 70px;
+        /* left: 445px; */
+        color:#ffffff;
+      font-weight: bold;
 
 }
 
- h2{
-  position: absolute;
-  top:470px;
-  left: 499px;
-    font-size: 15px;
-    font-weight: bold;
-    color: #ffffff;
- }
+    /* .pan_p{
+      position: absolute;
+      top: 470px;
+     left: 800px;
+    color:#ffffff;
+        font-weight: bold;
+} */
 
- h3{
-  position: absolute;
-  top:470px;
-  left: 834px;
-    font-size: 15px;
-    color: #ffffff;
-    font-weight: bold; 
- }
-
- h5 {
-    display: block;
-    font-size: 15px;
-    font-weight: bold;
-    margin: 20px ; /* 원하는 간격으로 조정하세요 */
+     h5 {
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 20px ; /* 원하는 간격으로 조정하세요 */
     color: rgb(92, 91, 91);
 
 
@@ -169,16 +200,31 @@ img {
 
 }
 
-p{
+    .hadan_p{
   color:rgb(198, 197, 197);
   font-size: 10px;
   margin-top: 50px;
 }
+    @media (max-width: 768px) {
+
+
+        .searchclass {
+
+            zoom:66%;
+        }
+        .logo{
+            display:none;
+
+        }
+
+    }
+
     </style>
 </head>
 <body>
     <header>
-      <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
+        <img class="logo" src="https://github.com/Leeguinea/groupbuying_softPBL/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
+        <div class="searchclass">
       <div class="search">
             <form method="get" th:action="@{/gesi}">
           <input type="text" name="searchKey" placeholder="공동구매 검색어를 입력하세요">
@@ -195,6 +241,7 @@ p{
             <a href="/GroupBuying/mypage">마이페이지</a>
             <a href="/logout">로그아웃</a>
             </th:if>
+        </div>
         </div>
     </header>
     
@@ -256,13 +303,27 @@ p{
         slides[slideIndex-1].style.display = "block";
     }
 </script>
-   
-    <section class="icon">
-      <a href="notice.html"><img src="https://github.com/Leeguinea/groupbuying_softPBL/tree/master/src/main/resources/static/image/gongi.png" alt="아이콘1" style="position: absolute; top: 370px; left: 160px; width: 110px;"></a>
-      <a href="gesi_zak.html"><img src="https://github.com/Leeguinea/groupbuying_softPBL/tree/master/src/main/resources/static/image/zak.png" alt="아이콘2" style="position: absolute; top: 370px; left: 500px; width: 110px;"></a>
-      <a href="real_fi_gesi.html"><img src="https://github.com/Leeguinea/groupbuying_softPBL/tree/master/src/main/resources/static/image/gesipan.png" alt="아이콘3" style="position: absolute; top: 370px; left: 830px; width: 110px;"></a>
-      <h1>공지사항</h1> <h2>게시글 작성하기</h2> <h3>게시판 바로가기</h3>
-    </section>
+
+       <section class="icon">
+           <div class="icon-item">
+               <a href="notice">
+                   <img src="/src/main/resources/static/image/noti.png" alt="아이콘1" style="position: relative; top: 20px; left: 10px; width: 30.33%;">
+                   <!-- <p class="gongi_p">공지사항</p> -->
+               </a>
+           </div>
+           <div class="icon-item">
+               <a href="gesizak">
+                   <img src="/src/main/resources/static/image/gezak.png" alt="아이콘2" style="position: relative; top: 20px; left: 0px; width: 30.33%;">
+                   <!-- <p class="zak_p">게시글 작성하기</p> -->
+               </a>
+           </div>
+           <div class="icon-item">
+               <a href="gesi">
+                   <img src="/src/main/resources/static/image/geba.png" alt="아이콘3" style="position: relative; top: 20px; left: 0px; width: 30.33%;">
+                   <!-- <p class="pan_p">게시판 바로가기</p> -->
+               </a>
+           </div>
+       </section>
    </main>
 
 
@@ -288,8 +349,8 @@ p{
       </h5>
       </div>
 
-      <div class=hadangul>
-      <p>
+    <div class="hadangul">
+        <p class="hadan_p">
       공구칭구는 커뮤니티를 제공할 뿐 판매의 당사자가 아닙니다.<br>
       공구칭구는 상품, 거래정보 및 거래 등에 대하여 책임을 지지않습니다.<br>
       공구칭구는 소비자보호와 안전거래를 위해 노력하겠습니다.<br>

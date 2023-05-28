@@ -5,44 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>공구칭구</title>
- <!--탭 로고-->
-    <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
-
-
 
     <style>
-
-       /*모바일 반응형*/
-@media screen and (max-width:767px){
-        
-        body{
-          zoom:50%;
-        }
-
-    
-        }
-
-    /*모든요소 중앙배열*/
-    .all{
-            width:1400px;
-            margin: 0 auto;
-
-        }
-
-    .imgclass{
-        width:1400px;
-        margin: 0 auto;
-    }
-
-
-    /*오른쪽 불필요한 여백제거*/
-    body {
-    padding-right: 0;
-    overflow-x: hidden;
-  }
-   
-
-    img {
+      img {
         position: relative;
         left: 0px;
         bottom: 180px;
@@ -65,7 +30,6 @@
         padding: 10px;
         border: 1px solid #6A6A6A;
         border-radius: 5px;
-
         
         font-size: 25px;
         
@@ -80,8 +44,8 @@
         color: white;
         border-radius: 5px;
         border: none;
-       
-        width:100px;
+
+        width: 100px;
         height: 70px;
         font-size: 23px;
 
@@ -89,18 +53,19 @@
         bottom: 530px;
         left: 1250px;
       }
-     /*상단 마이페이지 버튼*/
-     .btn8{
+
+      /*상단 마이페이지 버튼*/
+      .btn8 {
         color: #878787;
         background-color: white;
         font-size: 22px;
         border: none;
 
         position: relative;
-        bottom:640px;
-        
-
+        bottom: 640px;
+        left: 1125px;
       }
+
 
       /*상단 로그아웃 버튼*/
       .btn9{
@@ -110,9 +75,8 @@
         border: none;
 
         position: relative;
-        bottom:640px;
-        
-
+        bottom: 640px;
+        left: 1140px;
       }
 
       /*상단 공지사항 버튼*/
@@ -123,15 +87,12 @@
         border: none;
 
         position: relative;
-        bottom:640px;
-       
-
+        bottom: 640px;
+        left: 1105px;
       }
 
- 
-
-         /*상단 글쓰기 버튼*/
-         .btn12 {
+      /*상단 찜버튼*/
+      .btn11 {
         color: #878787;
         background-color: white;
         font-size: 22px;
@@ -139,15 +100,11 @@
 
         position: relative;
         bottom: 640px;
-    
+        left: 1120px;
       }
 
-
-
-
-      /* 상단버튼 위치이동*/
-      .top{
-
+      /* 상단 4개버튼 위치이동*/
+      .top {
         position: relative;
         left:938px;
       }
@@ -199,8 +156,8 @@ bottom: 480px;
 
 }
 
-h2 {
-        font-size: 35pt;
+      h2 {
+        font-size: 45pt;
 
         position: relative;
         left: 90px;
@@ -214,18 +171,11 @@ h2 {
         left: 170px;
         bottom: 500px;
       }
-
-      .content{
-
-        position: relative;
-        bottom:50px;
-      }
     </style>
   </head>
   <body>
     <!--이미지 클릭시 메인 페이지 이동-->
-    <a href="home.html">
-      <div class=imgclass>
+    <a href="home">
       <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
       </div>
     </a>
@@ -245,23 +195,29 @@ h2 {
     </form>
     <div class="top">
 
-      <button class="btn10" onClick="location.href='notice.html'">
+      <button class="btn10" onClick="location.href='gongi'">
         공지사항
       </button>
-      <button class="btn12" onClick="location.href='gesi_zak.html'">
-        글쓰기
+      <button class="btn11" onClick="location.href='jjim'">
+        내가 작성한 게시글
       </button>
-      <button class="btn8" onClick="location.href='mypage.html'">
+      <button class="btn8" onClick="location.href='mypage'">
         마이페이지
       </button>
       <button class="btn9" onClick="location.href='logout'">
         로그아웃</button>
+      </div>
+
+      <div th:if="${session.loginId == null}">
+        <button class="btn9" onClick="location.href='login'">
+          로그인</button>
+      </div>
     </div>
 
     <h2>공지사항</h2>
 
     
-<div class="content">
+
     <div class="title1">
       <h3>공동구매 안전수칙</h3>
     </div>
@@ -319,8 +275,7 @@ h2 {
         </li>
     </ul>
 
-  </div>
-</div>
+
 
   </body>
   <a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
