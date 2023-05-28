@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -234,62 +234,47 @@ position: relative;
       <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
       <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
       <button class="btn9">로그아웃</button>
+      <p th:text="${session.loginId}"></p>
     </div>
 
     <h2>개인정보 변경</h2>
 
-    <form method="post">
+    <form action="/mypage/information_change" method="post">
+      <input type="hidden" th:value="${updateMember.id}" name="id"><br>
       <!--닉네임 변경-->
       <div class="nickname">
         <p class="p1">새로운 닉네임을 입력해주세요.</p>
 
         <p class="new_nickname">
           새 닉네임
-          <input
-            type="text"
-            style="width: 694px; height: 40px; font-size: 20pt"
-          />
+          <input type="text" th:value="${updateMember.nickname}" name="nickname" style="width: 694px; height: 40px; font-size: 20pt"/><br>
         </p>
       </div>
 
       <!--비밀번호 변경-->
-      <div class="password">
+      <div class="pwd">
         <p class="p2">새로운 비밀번호를 입력해주세요.</p>
 
         <p class="p3">
           현재 비밀번호
-          <input
-            type="password"
-            style="width: 694px; height: 40px; font-size: 20pt"
-          />
+          <input type="password" th:value="${updateMember.pwd}" name="currentPwd" style="width: 694px; height: 40px; font-size: 20pt"/>
         </p>
 
         <p class="p4">
           새 비밀번호
-          <input
-            type="password"
-            style="width: 694px; height: 40px; font-size: 20pt"
-            placeholder="비밀번호는 8~16자이내만 가능합니다."
-          />
+          <input type="password" name="pwd" style="width: 694px; height: 40px; font-size: 20pt" placeholder="비밀번호는 8~16자이내만 가능합니다."/><br>
         </p>
 
         <p class="p5">
           비밀번호 재확인
-          <input
-            type="password"
-            style="width: 694px; height: 40px; font-size: 20pt"
-          />
+          <input type="password" name="confirmPwd" id="confirmPwd" style="width: 694px; height: 40px; font-size: 20pt  " placeholder="비밀번호는 8~16자이내만 가능합니다." /><br>
         </p>
       </div>
-  
+
 
     <div class="button">
     <input type="button" class="btn2" value="취소" onClick="location.href='mypage.html'"/>
-    <input
-      type="submit"
-      class="btn3"
-      value="변경"
-      ;
+    <input type="submit" class="btn3" value="개인정보수정" ;
       onclick="alert('변경이 완료되었습니다.')"
     />
 

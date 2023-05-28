@@ -7,6 +7,8 @@ import com.example.GroupBuying.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service //스프링이 관리해주는 객체로 등록
@@ -39,15 +41,70 @@ public class MemberService {
                 return dto;
             } else {
                 //비밀번호가 불일치(로그인 실패)
-                return null;
+                return new MemberDTO(10); // 비밀번호가 불일치할 때 10을 반환하는 MemberDTO 객체 생성
             }
         } else {
             // 조회 결과가 없다.
-            return null;
+            return new MemberDTO(20); // ID가 불일치할 때 20을 반환하는 MemberDTO 객체 생성
         }
 
     }
 
 
 
+
+
+    public List<MemberDTO> findALL() {
+        List<MemberEntity> memberEntityList = memberRepository.findAll();
+        //Entity가 여러개 담긴 List를 DTO가 여러개 담긴 List로 변환
+        List<MemberDTO> memberDTOList = new ArrayList<>();
+        for (MemberEntity memberEntity: memberEntityList) {
+            memberDTOList.add(MemberDTO.toMemberDTO(memberEntity));
+            MemberDTO memebrDTO = MemberDTO.toMemberDTO(memberEntity);
+            memberDTOList.add(memebrDTO);
+        }
+        return memberDTOList;
+    }
+
+    public MemberDTO findById(String id) {
+        Optional<MemberEntity> optionalMemberEntity = memberRepository.findById(id);
+        if (optionalMemberEntity.isPresent()) {
+            return MemberDTO.toMemberDTO(optionalMemberEntity.get());
+        } else {
+            return null;
+        }
+    }
+
+
+    public MemberDTO updateForm(String myId) { //Id로 DB에서 회원정보를 조회하는것.
+        Optional<MemberEntity> optionalMemberEntity = memberRepository.findById(myId);
+        if(optionalMemberEntity.isPresent()) {
+            return MemberDTO.toMemberDTO(optionalMemberEntity.get());
+        } else {
+            return null;
+        }
+    }
+
+    public void update(MemberDTO memberDTO) {
+        memberRepository.save(MemberEntity.toUpdateMemberEntity(memberDTO));
+    }
+
+    public void deleteById(Long id) {
+        memberRepository.deleteById(id);
+    }
+
+    public String idCheck(String id) {
+        Optional<MemberEntity> byId = memberRepository.findById(id);
+        if (byId.isPresent()) {
+            //조회결과가 있다 -> 해당 아이디는 사용 불가
+            return null;
+
+        } else {
+            //조회결과가 없다. -> 사용할 수 있다.
+            return "ok";
+        }
+
+    }
 }
+
+

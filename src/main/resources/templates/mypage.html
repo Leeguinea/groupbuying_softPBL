@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -35,21 +35,21 @@
         border: 1px solid #6A6A6A;
         border-radius: 5px;
 
-        
+
         font-size: 25px;
-        
+
 
 
       }
 
       /* 검색 버튼 */
       .btn1 {
-       
+
         background-color: #f7c111;
         color: white;
         border-radius: 5px;
         border: none;
-       
+
         width:100px;
         height: 70px;
         font-size: 23px;
@@ -83,8 +83,8 @@
         font-size: 33pt;
       }
 
-  
-  
+
+
 
       /*개인정보 변경 버튼*/
       .btn4 {
@@ -116,10 +116,10 @@
         bottom: 300px;
       }
 
-   
 
 
-      
+
+
 
       .total{
         position: relative;
@@ -186,7 +186,7 @@
       }
 
 
-      
+
 
     </style>
   </head>
@@ -209,6 +209,7 @@
       <button class="btn10" onClick="location.href='notice.html'">공지사항</button>
       <button class="btn8" onClick="location.href='mypage.html'">마이페이지</button>
       <button class="btn9">로그아웃</button>
+      <p th:text="${session.loginId}"></p>
     </div>
 
     <div class="total">
@@ -221,11 +222,11 @@
 
 
     <div>
-      <button class="btn4" onClick="location.href='information_change.html'">개인정보 변경</button>
+      <button class="btn4" onClick="location.href='/mypage/information_change'">개인정보 변경</button>
       <button class="btn5" onClick="location.href='withdrawal.html'">회원탈퇴 </button>
     </div>
 
-    
+
 
 </div>
   </body>
