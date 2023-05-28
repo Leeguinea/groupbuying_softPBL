@@ -6,22 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공구칭구</title>
     <style>
-      
+       
         body {
-  margin-top: 130px;
+  /* margin-top: 130px; */
 	padding: 0;
 	font-family: Arial, sans-serif;
   background-color: #ffffff;
 }
 
 
-header {
+.all{
+            width:100%;
+            margin: 0 auto;
+
+        }
+
+    .imgclass{
+        width:100%;
+        margin: 0 auto;
+    }
+        header {
 	background-color: #ffffff;
 	padding: 10px 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
+img {
+  max-width: auto;
+  height: auto;
+}
+
 /* 검색창 */
 .search {
   position: absolute;
@@ -74,10 +89,16 @@ header {
   color: #888787;
   text-decoration: none;
 }
+
+header {
+      height: 100px; /* header 높이 고정 */
+      position: relative; /* header 자식 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
+    }
+
 .post-gesi {
-  position: absolute;
+  position: relative;
   left: 70px;
-  top: 100px;
+  top: 0px;
 }
 .post-form {
 	margin: 20px auto;
@@ -167,6 +188,57 @@ header {
   font-family: "맑은 고딕", Arial, sans-serif;
 }
 
+@media (max-width: 768px) {
+  /* Styles for screens larger than 768px */
+  .all{
+            width:auto;
+            margin: 0 auto;
+
+        }
+
+    .imgclass{
+        width:auto;
+        margin:auto;
+    }
+    
+
+  
+ .searchclass {
+ 
+   zoom:59%;
+  } 
+  img{
+    display:none;
+    
+  } 
+
+}
+
+
+@media (min-width: 1024px) {
+  /* Styles for screens larger than 1024px */
+  .all{
+            width:1000px;
+            margin: 0 auto;
+
+        }
+
+    .imgclass{
+        width:1400px;
+        margin: 0 auto;
+    }
+
+ 
+
+  .submit input {
+    width: 100%;
+    height: 75%;
+  }
+  img{
+    right: 100px;
+  }
+  
+}
 
 
 
@@ -181,8 +253,14 @@ header {
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <div class="all">
 	<header>
-		
+		<div class=imgclass>
+      <a href="home.html">
+        <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
+      </a>
+      </div>
+      <div class="searchclass">
          <div class="search">
             <input type="text" placeholder="공동구매 검색어를 입력하세요.">
             <button type="submit">검색</button>
@@ -195,7 +273,7 @@ header {
       <a href="mypage.html">마이페이지</a>
       <a href="#logout">로그아웃</a>
         </div>
-
+      </div>
 	</header>
 	<main>
     <div class="post-gesi">
@@ -248,21 +326,12 @@ header {
 			    <div class="post-content">
                 <label for="content">내용</label>
                 <textarea rows="8" textarea id="content" name="content" placeholder=
-"거래시간:
-거래장소:
-결제방식:
-
-
-품목에 대한 설명을 자유롭게 써주세요.
-                
-위 사항을 지키지 않아 발생하는 문제는 책임지지 않습니다."
+"거래시간: &#13;&#10;거래장소: &#13;&#10;결제방식:&#13;&#10;&#13;&#10;품목에 대한 설명을 자유롭게 써주세요. &#13;&#10;&#13;&#10;위 사항을 지키지 않아 발생하는 문제는 책임지지 않습니다."
 ></textarea>
           </div>
 
 
-<a href="home.html">
-  <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
-</a>
+
 
           <div class="post-image">
             <label for="image">사진 첨부하기</label>
@@ -308,7 +377,7 @@ header {
   var item = document.getElementById("item").value;
   var recruitment = document.getElementById("recruitment").value;
   var content = document.getElementById("content").value;
-  var image = document.getElementById("image").value;
+
 
 
   if (title.value === "") {
@@ -347,11 +416,7 @@ header {
     return false;
   }
 
-  if (image === "") {
-    alert("사진을 첨부해주세요.");
-    document.getElementById("image").focus();  
-    return false;
-  }
+  
 
   // 유효성 검사 통과이다
   return true;
@@ -359,5 +424,11 @@ header {
 
   </script>
   
+  
+    
+  
+  
+
+  </div>
 </body>
 </html>

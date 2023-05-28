@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공구칭구</title>
     <style>
+        .all{
+            width:100%;
+            margin: 0 auto;
+
+        }
+
+    .imgclass{
+        width:100%;
+        margin: 0 auto;
+    }
         header {
 	background-color: #ffffff;
 	padding: 10px 20px;
@@ -75,18 +85,25 @@ header {
       height: 100px; /* header 높이 고정 */
       position: relative; /* header 자식 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
     }
-    .content {
-	margin: 20px;
-	padding: 20px;
-	border: 1px solid #ccc;
-}
+
 .content {
     margin: 20px;
     padding: 20px;
     border: 1px solid #ccc;
+    border-radius: 10px;
+} .content2 {
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ccc;
+  border-radius: 10px;
+
 }
 
+
 .content p:nth-child(3) {
+    margin-bottom: 20px;
+}
+.content2 p:nth-child(3) {
     margin-bottom: 20px;
 }
 
@@ -94,8 +111,15 @@ header {
     font-size: 24px;
     margin-bottom: 10px;
 }
+.content2 h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
 
 .content p {
+    margin-bottom: 10px;
+}
+.content2 p {
     margin-bottom: 10px;
 }
 
@@ -103,8 +127,11 @@ header {
     display: inline-block;
     margin-bottom: 10px;
 }
-
-.content img {
+.content2 a {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.content2 img {
     display: block;
     margin-bottom: 10px;
     width: 300px;
@@ -114,30 +141,100 @@ header {
 .content span {
     font-weight: bold;
 }
+/*내용 span*/
+.content2 span {
+    font-weight: bold;
+    font-size: 25px;
+}
 #user_id{
     font-weight: normal;
 }
 #date {
-  float: right;
+  position: absolute;
+ 
+  /* left: 0%;
+  transform: translate(-50%, -50%); */
   font-weight: normal;
 }
 .content p:nth-child(3) {
-	margin-bottom: 120px;
+	margin-bottom: 40px;
+}
+.inline-container {
+  display: flex;
+}
+
+.inline-container p {
+  margin-right: 10px;
+}
+.chat{
+  color: rgb(103, 103, 103);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  /* Styles for screens larger than 768px */
+  .all{
+            width:auto;
+            margin: 0 auto;
+
+        }
+
+    .imgclass{
+        width:auto;
+        margin:auto;
+    }
+    
+
+  
+ .searchclass {
+ 
+   zoom:59%;
+  } 
+  img{
+    display:none;
+    
+  } 
+
 }
 
 
+@media (min-width: 1024px) {
+  /* Styles for screens larger than 1024px */
+  .all{
+            width:1000px;
+            margin: 0 auto;
 
+        }
 
+    .imgclass{
+        width:1400px;
+        margin: 0 auto;
+    }
+
+ 
+
+  .submit input {
+    width: 100%;
+    height: 75%;
+  }
+  img{
+    right: 100px;
+  }
+  
+}
 
   
     </style>
 </head>
 <body>
-    
+  <div class="all">
 	<header>
+    <div class=imgclass>
         <a href="home.html">
           <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 20px; left: 0px; width: 361px; height: 74.5px;">
         </a>
+    </div>
+    <div class="searchclass">
         <div class="search">
 			<input type="text" placeholder="공동구매 검색어를 입력하세요.">
 			<button type="submit">검색</button>
@@ -149,19 +246,33 @@ header {
 			<a href="mypage.html">마이페이지</a>
 			<a href="#logout">로그아웃</a>
 		</div>
+  </div>
 	</header>
 
     <div class="content">
-        <p><span id="user_id" style="color: blue; font-size: 13px;">아이디</span></p>
-        <h1>제목</h1>
-        <p><span id="date" style="float:right;">날짜</span></p>
+        <p><span id="user_id" style="color: blue; font-size: 13px;">(아이디)</span></p>
+        <h1>(제목)</h1>
+        <p><span id="date" style="float:right;">(날짜)</span></p>
+    </div>
 
-
-        <a href="오픈링크 URL">오픈채팅방 링크</a>
+    <div class="content2">
         <img src="사진 URL" style="width: 300px; height: 200px;">
-        <p>품목 <span id="item"></span></p>
-        <p>모집인원 <span id="person"></span></p>
-        <p>내용 <span id="content"></span></p>
+        <a class="chat" href="오픈링크 URL">(오픈채팅방 링크)</a>
+
+        <div class="inline-container">
+        <p>(카테고리) <span id="category"></span></p>
+        <p>/ <span id="plus"></span></p>
+        <p>(품목) <span id="item"></span></p>
+        <p>/ <span id="plus"></span></p>
+        <p>(모집인원) <span id="person"></span></p>
+        <p>명 <span id="count"></span></p>
+
         </div>
+
+
+        <br>
+        <p><span id="content">내용</span></p>
+    </div>
+  </div>
 </body>
 </html>
