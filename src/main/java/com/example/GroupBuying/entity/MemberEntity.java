@@ -82,5 +82,5 @@ public class MemberEntity {
         memberEntity.setDay(memberDTO.getDay());
         return memberEntity; // 대입된 값들을 다시 service 객체로 반환
     }
-//test
+//test12
 }
