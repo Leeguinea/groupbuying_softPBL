@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            background-color: #ffffff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        /* 검색창 */
+        .search {
+            position: absolute;
+            top: 50px;
+            right: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* 검색 입력창 */
+        .search input[type="text"] {
+            width: 400px; /* 검색창의 너비를 조정 */
+            padding: 10px;
+            border: border box;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* 검색 버튼 */
+        .search button[type="submit"] {
+            margin-left: 10px;
+            padding: 10px;
+            background-color: #f7c111;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        .topnav-right {
+            position: absolute;
+            left: 730px;
+            top: 20px;
+        }
+        .post {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f7f7f7;
+        }
+
+        .post .title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .post .content {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>제목</title>
+    <style>
+        header {
+            height: 100px; /* header 높이 고정 */
+            position: relative; /* header 자식 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
+        }
+
+        .post {
+            margin-top: 20px; /* header 높이 + margin 만큼 post 들을 아래로 밀어줌 */
+            position: relative; /* post 내부 요소의 position 속성을 상대적으로 지정하기 위해 설정 */
+        }
+
+        .post-meta {
+            position: absolute; /* post 내부 요소의 위치를 상대적으로 지정하기 위해 설정 */
+            bottom: 0; /* post 내부 요소를 post의 하단에 위치시키기 위해 설정 */
+            right: 0; /* post 내부 요소를 post의 오른쪽에 위치시키기 위해 설정 */
+            display: flex; /* post 내부 요소를 가로 방향으로 정렬하기 위해 설정 */
+            flex-direction: row-reverse; /* post 내부 요소를 가로 방향으로 반전시켜서 오른쪽에 위치시키기 위해 설정 */
+        }
+
+        .join-button {
+            margin-left: 20px;
+            padding: 10px;
+            background-color: #f7c111;
+            color: white;
+            border: none;
+            border-radius: 10px; /*동그랗게*/
+            cursor: pointer;
+            font-size: 16px;
+        }
+        span {
+            font-size: smaller;
+            color: blue;
+        }
+
+    </style>
+
+</head>
+<body>
+<header>
+    <a href="home">
+        <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/공구칭구.png" alt="이미지1" style="position: absolute; top: 33px; left: 0px; width: 367px; height: 63px;">
+    </a>
+    <div class="search">
+        <form method="get" th:action="@{/gesi}">
+            <input type="text" name="searchKey" placeholder="공동구매 검색어를 입력하세요">
+            <button type="submit">검색</button>
+        </form>
+    </div>
+    <div class="topnav-right" th:if="${session.loginId != null}">
+        <a href="/gongi">공지사항</a>
+        <a href="/gesizak">글쓰기</a>
+        <a href="/jjim">내가 작성한 글</a>
+        <a href="/mypage">마이페이지</a>
+        <a href="/logout">로그아웃</a>
+
+    </div>
+    <div class="topnav-right" th:if="${session.loginId == null}">
+        <a href="/gongi">공지사항</a>
+        <a href="GroupBuying/login">로그인</a>
+    </div>
+</header>
+<div class="post" th:each="board: ${boardList}">
+
+    <div class="post-item">
+        <span id="post1" th:text="${board.member.nickname}"></span>
+        <h2 class="title">
+            <a th:href="@{/view(id=${board.id})}">
+                제목: <span th:text="${board.title}"></span>
+            </a>
+        </h2>
+        <p class="content" th:text="'내용:' + ${board.content}"></p>
+        <div class="post-meta">
+            <a th:href="@{/view(id=${board.id})}">
+                <button class="join-button">상세보기</button>
+            </a>
+            <p class="time" th:text="${board.date}"></p>
+        </div>
+
+    </div>
+</div>
+</div>
+</body>
+<a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
+
+</html>
+
+</html>
