@@ -10,6 +10,7 @@ spring:
     #MySQL에서 생성한 사용자 계정 정보 기입.
     username: root
     password: 1234
+
   thymeleaf:
     cache: false
 
@@ -21,5 +22,4 @@ spring:
     hibernate:
       ddl-auto: update
 
-#test9
 
