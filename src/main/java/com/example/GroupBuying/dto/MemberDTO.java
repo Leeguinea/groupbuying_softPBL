@@ -38,6 +38,7 @@ public class MemberDTO { //DTO 클래스는 회원정보에 필요한 내용들�
         // 기본 생성자
     }
 
+    //test
 
     private Long number;//추가
     private String id;
