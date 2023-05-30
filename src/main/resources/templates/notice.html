@@ -130,7 +130,6 @@
         bottom: 640px;
       }
 
-      /* 상단 4개버튼 위치이동*/
       /* 상단버튼 위치이동*/
       .top{
         position: relative;
@@ -143,7 +142,7 @@
         font-size: 20pt;
         position: relative;
         left: 170px;
-        bottom: 480px;
+        bottom: 435px;
 
       }
 
@@ -208,7 +207,7 @@ bottom: 480px;
   </head>
   <body>
     <!--이미지 클릭시 메인 페이지 이동-->
-    <a href="home">
+    <a href="home.html">
       <div class=imgclass>
       <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
       </div>
@@ -229,14 +228,14 @@ bottom: 480px;
     </form>
     <div class="top">
 
-      <button class="btn10" onClick="location.href='notice'">
+      <button class="btn10" onClick="location.href='notice.html'">
         공지사항
       </button>
-      <button class="btn12" onClick="location.href='gesizak'">
+      <button class="btn12" onClick="location.href='gesi_zak.html'">
         글쓰기
       </button>
       <div th:if="${session.loginId != null}">
-      <button class="btn8" onClick="location.href='mypage'">
+      <button class="btn8" onClick="location.href='mypage.html'">
         마이페이지
       </button>
       <button class="btn9" onClick="location.href='logout'">
@@ -244,7 +243,7 @@ bottom: 480px;
       </div>
 
       <div th:if="${session.loginId == null}">
-        <button class="btn9" onClick="location.href='login'">
+        <button class="btn9" onClick="location.href='login.html'">
           로그인</button>
       </div>
     </div>
@@ -254,7 +253,9 @@ bottom: 480px;
 
 
       <div class="content">
+        <div class="title1">
       <h3>공동구매 안전수칙</h3>
+    </div>
     </div>
 
     <ul>
@@ -317,3 +318,4 @@ bottom: 480px;
   <a th:href="@{/gesi(searchKey = ${param.searchKeyword})}"></a>
 
 </html>
+

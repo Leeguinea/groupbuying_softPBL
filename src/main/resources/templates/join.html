@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>공구칭구</title>
+       <!--탭 로고-->
+       <link rel="icon" href="https://github.com/Leeguinea/groupbuying_softPBL/blob/master/src/main/resources/static/image/face_logo.png?raw=true">
+
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
             integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
             crossorigin="anonymous"></script>
@@ -108,8 +111,7 @@
                 alert("가입이 완료되었습니다.");
             }
 
-//입력 값 전송(submit)
-            document.join.submit();
+
 
         }
 
@@ -118,17 +120,18 @@
 
     <style>
 
-        /*모바일 반응형*/
-        @media screen and (max-width:767px){
+   
+/*모바일 반응형*/
+@media screen and (max-width:767px){
+        
+        .all,.imgclass{
+          zoom:70%;
+          margin: 0 auto;
 
-            .all,.imgclass{
-                zoom:70%;
-                margin: 0 auto;
-
-
-            }
-
+    
         }
+        
+      }
 
         /*모든요소 중앙배열*/
         .all{
@@ -148,6 +151,16 @@
         body{
             zoom:67%;
         }
+        img {
+        margin: auto;
+        display: block;
+        width: 500px;
+        height: 500px;
+
+        position: relative;
+        bottom: 150px;
+      }
+
 
 
         /*아이디 입력창*/
@@ -242,16 +255,13 @@
 
 
         /*가입하기 버튼*/
-
-
-
-
         .btn2{
             width: 720px;
             height: 80px;
             margin: auto;
             display: block;
 
+            border: none;
             font-size:30pt;
             color:white;
             background-color:#FDCE50;
@@ -274,16 +284,19 @@
 
 
         <!--이미지 클릭시 메인 페이지 이동-->
-        <a href="home">
+        <a href="home.html">
+            <div class="imgclass">
             <img src="https://github.com/Leeguinea/university-groupbuing/raw/master/src/main/resources/static/image/logo.png" />
 
         </a>
+    </div>
         <form method="post">
+            <div class="all">
             <div class="c1">
                 <div class="id">
                     <p>아이디</p>
                     <input
-                            type="text" name="id" class="id" stlye="width: 694px; height: 40px;" placeholder="아이디는 영문 대소문자와 숫자 4~12자이내만 가능 ."
+                            type="text" name="id" class="id" stlye="width: 694px; height: 40px;" placeholder="아이디는 영문 대소문자와 숫자 4~12자이내만 가능"
                             id = "id" onkeyup="idCheck()">
                     <p id="check-result" style="font-size: 40px;"></p>
 
@@ -297,7 +310,7 @@
 
                 <div class="pwd">
                     <p>비밀번호</p>
-                    <input type="password" name="pwd" style="width: 694px; height: 40px; font-size: 20pt" placeholder="비밀번호는 8~16자이내만 가능합니다."/>
+                    <input type="password" name="pwd" style="width: 694px; height: 40px; font-size: 20pt" placeholder="비밀번호는 8~16자이내만 가능"/>
                 </div>
 
                 <div class="name">
@@ -360,37 +373,18 @@
                 </div>
             </div>
 
-            <div>
-                <input type="button" class="btn1" value="학교인증" ; />
-            </div>
+          
+       
 
             <div>
-                <input type="submit" class="btn2" value="가입하기";  onclick="alert('가입이 완료되었습니다.')"/>
+                <input type="submit" class="btn2" value="가입하기";  onclick="check();">
             </div>
-
+        </div>
         </form>
 
-        <script>
-            function checkUserId() {
-                const id = document.getElementsByName("id");
-                const nickname = document.getElementsByName('nickname');
-                const pwd = document.getElementsByName('pwd');
-                const name = document.getElementsByName('name');
-                const phone1 = document.getElementsByName('phone1');
-                const phone2 = document.getElementsByName('phone2');
-                const phone3 = document.getElementsByName('phone3');
-                const year = document.getElementsByName('year');
-                const month = document.getElementsByName('month');
-                const day = document.getElementsByName('day');
-
-                if (!id) {
-                    alert('모든 입력란을 채워주세요!');
-                    return false;
-                }
-            }
-
-        </script>
+        
 </body>
+
 <script th:inline="javascript">
     const idCheck = () => {
         const id = document.getElementById("id").value;
@@ -425,3 +419,4 @@
     }
 </script>
 </html>
+
